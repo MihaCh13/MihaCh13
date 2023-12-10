@@ -1,7 +1,7 @@
 👨‍💻 Full-Stack Developer | Code Enthusiast | 🎵 Music Lover
 🐍 Pythonista | C# Sharpshooter
 
-📚 Horror & Mystery Bookworm 🕵️‍♂️
+📚 Horror & Mystery Bookworm 🕵️‍♂️ 
 🔪 Exploring Murders, Mysteries & Blood-Curdling Tales
 
 🔲 Digital Artisan | Python Graphics Wizard 🖌️
