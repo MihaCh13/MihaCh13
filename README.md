@@ -13,7 +13,7 @@
 
 ## I specialize in:
 
-<p style="font-size: 1.2em; font-weight: bold; color: #2E4053; text-align: center; font-family: 'Arial', sans-serif;">
+<p style="font-size: 1.2em; font-weight: bold; color: #2E4053; text-align: center; font-family: 'Arial', sans-serif; font-style: italic;">
   <b><i>Web Development | Software Engineering | Data Science | Cybersecurity | UI/UX Design |  Creativity | Digital Art</i></b>
 </p>
 
