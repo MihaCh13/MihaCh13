@@ -14,9 +14,6 @@
 <!-- Вграждане на HTML код в README.md -->
 <img src="pics/code.png" alt="Code Logo" width="100" height="100"> <img src="pics/digital%20art.png" alt="Digital Art Logo" width="100" height="100"> <img src="pics/gimp.png" alt="GIMP Logo" width="100" height="100"> <img src="pics/incscape.png" alt="Inkscape Logo" width="100" height="100"> <img src="pics/pngegg.png" alt="Pngegg Logo" width="100" height="100"> <img src="pics/python-5-logo-png-transparent.png" alt="Python Logo" width="100" height="100">
 
-<!-- Вграждане на Markdown код в README.md -->
-![Code Logo](pics/code.png) ![Digital Art Logo](pics/digital%20art.png) ![GIMP Logo](pics/gimp.png) ![Inkscape Logo](pics/incscape.png) ![Pngegg Logo](pics/pngegg.png) ![Python Logo](pics/python-5-logo-png-transparent.png)
-
 <!-- Вграждане на HTML код със стилове в README.md -->
 <img src="pics/code.png" alt="Code Logo" style="display:inline-block; margin-right: 10px;"> <img src="pics/digital%20art.png" alt="Digital Art Logo" style="display:inline-block; margin-right: 10px;"> <img src="pics/gimp.png" alt="GIMP Logo" style="display:inline-block; margin-right: 10px;"> <img src="pics/incscape.png" alt="Inkscape Logo" style="display:inline-block; margin-right: 10px;"> <img src="pics/pngegg.png" alt="Pngegg Logo" style="display:inline-block; margin-right: 10px;"> <img src="pics/python-5-logo-png-transparent.png" alt="Python Logo" style="display:inline-block; margin-right: 10px;">
 
