@@ -14,8 +14,6 @@
 <!-- Вграждане на HTML код в README.md -->
 <img src="pics/code.png" alt="Code Logo" width="100" height="100"> <img src="pics/digital%20art.png" alt="Digital Art Logo" width="100" height="100"> <img src="pics/gimp.png" alt="GIMP Logo" width="100" height="100"> <img src="pics/incscape.png" alt="Inkscape Logo" width="100" height="100"> <img src="pics/pngegg.png" alt="Pngegg Logo" width="100" height="100"> <img src="pics/python-5-logo-png-transparent.png" alt="Python Logo" width="100" height="100">
 
-<!-- Вграждане на HTML код със стилове в README.md -->
-<img src="pics/code.png" alt="Code Logo" style="display:inline-block; margin-right: 10px;"> <img src="pics/digital%20art.png" alt="Digital Art Logo" style="display:inline-block; margin-right: 10px;"> <img src="pics/gimp.png" alt="GIMP Logo" style="display:inline-block; margin-right: 10px;"> <img src="pics/incscape.png" alt="Inkscape Logo" style="display:inline-block; margin-right: 10px;"> <img src="pics/pngegg.png" alt="Pngegg Logo" style="display:inline-block; margin-right: 10px;"> <img src="pics/python-5-logo-png-transparent.png" alt="Python Logo" style="display:inline-block; margin-right: 10px;">
 
 <!-- Вграждане на HTML код в README.md -->
 [Вижте моите HTML и CSS резултати](index.html)
