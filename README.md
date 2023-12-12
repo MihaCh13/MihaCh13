@@ -11,6 +11,12 @@
 
 𝕄𝕆𝕋𝕆 𝔾𝕀ℝ𝕃 🏍️♥
 
+## I specialize in:
+
+<p style="font-size: 1.2em; font-weight: bold; color: #007BFF; text-align: center;">
+  Web Development | Software Engineering | Data Science
+</p>
+
 <!-- Вграждане на HTML код в README.md -->
 <img src="pics/code.png" alt="Code Logo" width="50"> <img src="pics/digital%20art.png" alt="Digital Art Logo" width="50"> <img src="pics/gimp.png" alt="GIMP Logo" width="50"> <img src="pics/incscape.png" alt="Inkscape Logo" width="50"> <img src="pics/pngegg.png" alt="Pngegg Logo" width="50"> <img src="pics/python-5-logo-png-transparent.png" alt="Python Logo" width="50">
 
