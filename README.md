@@ -12,5 +12,5 @@
 𝕄𝕆𝕋𝕆 𝔾𝕀ℝ𝕃 🏍️♥
 
 <!-- Вграждане на HTML код в README.md -->
-[Вижте моите HTML и CSS резултати](path/to/index.html)
+[Вижте моите HTML и CSS резултати](index.html)
 
