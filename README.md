@@ -14,7 +14,7 @@
 ## I specialize in:
 
 <p style="font-size: 1.2em; font-weight: bold; color: #007BFF; text-align: center;">
-  Web Development | Software Engineering | Data Science
+  Web Development | Software Engineering | Data Science | Cybersecurity | UI/UX Design |  Creativity | Digital Art
 </p>
 
 <!-- Вграждане на HTML код в README.md -->
