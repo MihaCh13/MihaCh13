@@ -12,4 +12,5 @@
 𝕄𝕆𝕋𝕆 𝔾𝕀ℝ𝕃 🏍️♥
 
 <!-- Вграждане на HTML код в README.md -->
-<iframe src="index.html" width="800px" height="600px"></iframe>
+[Вижте моите HTML и CSS резултати](path/to/index.html)
+
