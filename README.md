@@ -10,3 +10,13 @@
 💡 𝕀𝕗 𝕪𝕠𝕦 𝕔𝕒𝕟 𝕕𝕣𝕖𝕒𝕞 𝕚𝕥, 𝕀 𝕔𝕒𝕟 𝕔𝕠𝕕𝕖 𝕚𝕥. 𝕃𝕖𝕥'𝕤 𝕔𝕣𝕖𝕒𝕥𝕖 𝕕𝕚𝕘𝕚𝕥𝕒𝕝 𝕞𝕒𝕘𝕚𝕔! ✨
 
 𝕄𝕆𝕋𝕆 𝔾𝕀ℝ𝕃 🏍️♥
+
+<!-- Снимки -->
+### Професионални Лого
+![Code Logo](pics/code.png)
+![Digital Art Logo](pics/digital%20art.png)
+![GIMP Logo](pics/gimp.png)
+![Inkscape Logo](pics/incscape.png)
+![Pngegg Logo](pics/pngegg.png)
+![Python Logo](pics/python-5-logo-png-transparent.png)
+
