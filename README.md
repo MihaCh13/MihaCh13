@@ -11,12 +11,5 @@
 
 𝕄𝕆𝕋𝕆 𝔾𝕀ℝ𝕃 🏍️♥
 
-<!-- Снимки -->
-### Професионални Лого
-![Code Logo](pics/code.png)
-![Digital Art Logo](pics/digital%20art.png)
-![GIMP Logo](pics/gimp.png)
-![Inkscape Logo](pics/incscape.png)
-![Pngegg Logo](pics/pngegg.png)
-![Python Logo](pics/python-5-logo-png-transparent.png)
-
+<!-- Вграждане на HTML код в README.md -->
+<iframe src="index.html" width="800px" height="600px"></iframe>
