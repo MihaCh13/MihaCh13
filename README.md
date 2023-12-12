@@ -23,8 +23,8 @@
     <h2>Specializing in the following areas:</h2>
 
     <ul>
-        <li><img src="MihaCh13/pics/code.png" alt="Visual Code"></li>
-        <li><img src="MihaCh13/pics/digital art.png" alt="Digital Art"></li>
+        <li><img src="pics/code.png" alt="Visual Code"></li>
+        <li><img src="pics/digital art.png" alt="Digital Art"></li>
         <li><img src="MihaCh13/pics/gimp.png" alt="Gimp"></li>
         <li><img src="MihaCh13/pics/incscape.png" alt="Incscape"></li>
         <li><img src="MihaCh13pics/pngegg.png/" alt="C#"></li>
