@@ -21,5 +21,5 @@
 <img src="pics/code.png" alt="Code Logo" width="50"> <img src="pics/digital%20art.png" alt="Digital Art Logo" width="50"> <img src="pics/gimp.png" alt="GIMP Logo" width="50"> <img src="pics/incscape.png" alt="Inkscape Logo" width="50"> <a href="Games"><img src="pics/pngegg.png" alt="C# Logo" width="50"></a><a href="Py Codes"><img src="pics/python-5-logo-png-transparent.png" alt="Python Logo" width="50"></a> 
 
 <p style="font-size: 1.2em; font-weight: bold; color: #2E4053; text-align: center; font-family: 'Arial', sans-serif; font-style: italic;">
-  <b><i>You can test my projects above🔝</i></b>
+  <b><i> You can test my projects by clicking the icons above 👀🔝</i></b>
 </p>
