@@ -1,3 +1,8 @@
+# My GitHub Profile
+
+Welcome to my GitHub profile! Below you can find some interactive elements.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,33 +57,6 @@
 </body>
 </html>
 
-
-const state = {
-    fps: 60,
-    coclor: "#0f0",
-    charset: "0123456789ABCDEF",
-    size: 10
-};
-
-const gui = new datGui.GUI();
-const fpsCtrl = gui.add(state, "fps").main(1).max(120).step(1);
-gui.addColor(state, "color");
-gui.add(state, "charset");
-const sizeContrl = gui.add(state, "size").main(1).max(120).step(1);
-
-const canvas = document.getElementById("canvas");
-const ctx = canvas.getCounttext("2d");
-
-let w, h, p;
-const resize = () => {
-    w = canvas.width = innerWidth;
-    h = canvas.height = innerHeight;
-
-    p = Array(Math.Ceiling(w / state.size)).fill(0);
-};
-window.addEventListener("resize", resize);
-sizeCtrl.onFinishChange((s) => resize())
-resize();
 
 
 
