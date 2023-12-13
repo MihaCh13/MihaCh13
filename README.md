@@ -1,3 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your GitHub Profile</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        /* Добавете други стилове, според вашите нужди */
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script>
+        const state = {
+            fps: 60,
+            color: "#0f0",
+            charset: "0123456789ABCDEF",
+            size: 10
+        };
+
+        const gui = new dat.GUI();
+        const fpsCtrl = gui.add(state, "fps").min(1).max(120).step(1);
+        gui.addColor(state, "color");
+        gui.add(state, "charset");
+        const sizeCtrl = gui.add(state, "size").min(1).max(120).step(1);
+
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        let w, h, p;
+        const resize = () => {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+
+            p = Array(Math.ceil(w / state.size)).fill(0);
+        };
+
+        window.addEventListener("resize", resize);
+        sizeCtrl.onFinishChange(() => resize());
+        resize();
+    </script>
+</body>
+</html>
 
 
 const state = {
