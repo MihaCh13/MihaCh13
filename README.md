@@ -1,3 +1,34 @@
+
+
+const state = {
+    fps: 60,
+    coclor: "#0f0",
+    charset: "0123456789ABCDEF",
+    size: 10
+};
+
+const gui = new datGui.GUI();
+const fpsCtrl = gui.add(state, "fps").main(1).max(120).step(1);
+gui.addColor(state, "color");
+gui.add(state, "charset");
+const sizeContrl = gui.add(state, "size").main(1).max(120).step(1);
+
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getCounttext("2d");
+
+let w, h, p;
+const resize = () => {
+    w = canvas.width = innerWidth;
+    h = canvas.height = innerHeight;
+
+    p = Array(Math.Ceiling(w / state.size)).fill(0);
+};
+window.addEventListener("resize", resize);
+sizeCtrl.onFinishChange((s) => resize())
+resize();
+
+
+
 (っ◔◡◔)っ ♥
 👨‍💻 𝔽𝕦𝕝𝕝-𝕊𝕥𝕒𝕔𝕜 𝔻𝕖𝕧𝕖𝕝𝕠𝕡𝕖𝕣 | ℂ𝕠𝕕𝕖 𝔼𝕟𝕥𝕙𝕦𝕤𝕚𝕒𝕤𝕥 | 🎵 𝕄𝕦𝕤𝕚𝕔 𝕃𝕠𝕧𝕖𝕣 🐍 ℙ𝕪𝕥𝕙𝕠𝕟𝕚𝕤𝕥𝕒 | ℂ# 𝕊𝕙𝕒𝕣𝕡𝕤𝕙𝕠𝕠𝕥𝕖𝕣
 
