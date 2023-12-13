@@ -1,5 +1,4 @@
-<iframe srcdoc="
-    <canvas id="canvas"></canvas>
+<iframe srcdoc="<canvas id="canvas"></canvas>
     <script>
         const state = {
             fps: 60,
@@ -27,7 +26,7 @@
         window.addEventListener("resize", resize);
         sizeCtrl.onFinishChange((s) => resize());
         resize();
-    </script>" width="600" height="400" frameborder="0"></iframe>
+    </script>"</script>" width="600" height="400" frameborder="0"></iframe>
     
 
 
