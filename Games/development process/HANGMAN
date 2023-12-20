@@ -1,0 +1,216 @@
+
+
+using System.Text;
+
+Console.WriteLine("-=HANGMAN=-");
+
+string wordToGuess = GetRandomWord();
+
+Console.WriteLine("  _____");
+Console.WriteLine(" |     |");
+Console.WriteLine(" | ");
+Console.WriteLine(" | ");
+Console.WriteLine(" | ");
+Console.WriteLine(" | ");
+Console.WriteLine(" | ");
+Console.WriteLine("===");
+
+Console.WriteLine();
+
+// Saving the wrong answers.
+int wrongAttempts = 0;
+
+// Saving all the letters a player has been used.
+List<char> guessedLetters = new List<char>();
+
+// Here we will save the player new word (the letters he has guessed) which will compare to the word he has to guess.
+StringBuilder newString = new StringBuilder();
+newString.Append('_', wordToGuess.Length);
+
+while (wrongAttempts < 6)
+{
+    Console.WriteLine("Guess a letter:");
+    Console.WriteLine();
+    Console.WriteLine(newString.ToString());
+    Console.WriteLine();
+
+    char currentChar = char.Parse(Console.ReadLine());
+
+    if (!guessedLetters.Contains(currentChar))
+    {
+        guessedLetters.Add(currentChar);
+    }
+    else
+    {
+        Console.WriteLine($"You have already tried the letter '{currentChar}'!");
+        Console.WriteLine();
+        continue;
+    }
+
+    if (!wordToGuess.Contains(currentChar))
+    {
+        wrongAttempts++;
+
+        if (wrongAttempts == 1)
+        {
+            Console.WriteLine("  _____");
+            Console.WriteLine(" |     |");
+            Console.WriteLine(" |     O");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine("===");
+        }
+        else if (wrongAttempts == 2)
+        {
+            Console.WriteLine("  _____");
+            Console.WriteLine(" |     |");
+            Console.WriteLine(" |     O");
+            Console.WriteLine(" |    \\|");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine("===");
+        }
+        else if (wrongAttempts == 3)
+        {
+            Console.WriteLine("  _____");
+            Console.WriteLine(" |     |");
+            Console.WriteLine(" |     O");
+            Console.WriteLine(" |    \\|/");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine("===");
+        }
+        else if (wrongAttempts == 4)
+        {
+            Console.WriteLine("  _____");
+            Console.WriteLine(" |     |");
+            Console.WriteLine(" |     O");
+            Console.WriteLine(" |    \\|/");
+            Console.WriteLine(" |     |");
+            Console.WriteLine(" |    /");
+            Console.WriteLine(" | ");
+            Console.WriteLine("===");
+        }
+        else if (wrongAttempts == 5)
+        {
+            Console.WriteLine("  _____");
+            Console.WriteLine(" |     |");
+            Console.WriteLine(" |     O");
+            Console.WriteLine(" |    \\|/");
+            Console.WriteLine(" |     |");
+            Console.WriteLine(" |    / \\");
+            Console.WriteLine(" | ");
+            Console.WriteLine("===");
+        }
+        else if (wrongAttempts == 6)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"The letter '{currentChar}' is wrong !");
+            Console.WriteLine();
+            Console.WriteLine($"The correct word is '{wordToGuess}'.");
+            Console.WriteLine();
+            Console.WriteLine("-=GAME OVER=-");
+            break;
+        }
+
+        Console.WriteLine($"The letter '{currentChar}' is wrong !");
+        Console.WriteLine();
+    }
+    else
+    {
+        // If wordToGuess contains the letter which the player has written we will replace the '_' with that letter.
+        for (int i = 0; i < wordToGuess.Length; i++)
+        {
+            if (wordToGuess[i] == currentChar)
+            {
+                newString[i] = currentChar;
+            }
+        }
+
+        Console.WriteLine();
+        Console.WriteLine("Correct!");
+        Console.WriteLine();
+    }
+
+    if (newString.ToString() == wordToGuess)
+    {
+        Console.WriteLine(newString.ToString());
+        Console.WriteLine();
+        Console.WriteLine("YOU WIN!");
+        break;
+    }
+}
+
+static string GetRandomWord()
+{
+    Console.WriteLine("Choose number of players: ");
+    int players = int.Parse(Console.ReadLine());
+    string[] word = words;
+    if (players > 1)
+    {
+        Console.WriteLine("Enter a word");
+        string word = Console.ReadLine();
+    }
+    else
+    {
+        Console.WriteLine("Choose category:");
+        Console.WriteLine("Geography & Nature | History | Biology | Family | Countries | Animals | Food | Subjects");
+        string category = Console.ReadLine();
+        
+
+        if (category == "Geography & Nature")
+        {
+           string[] words = { "mountain", "horizon", "flower", "river", "clouds", "sunset", "beach", "starlight", "raindrop", "butterfly", "sapphire", "peak", "ocean", "earthquake", "hill", "lake", "valley" };
+
+        }
+
+        else if (category == "History")
+        {
+            string[] words = { "history", "timeline", "events", "evolution", "progression", "development", "millestones", "origins", "legacy", "revolution", "growth", "advancement", "achievments", "changes" };
+        }
+
+        else if (category == "Biology")
+        {
+            string[] words = { "biology", "anatomy", "physiology", "cells", "evolution", "genetics", "ecoclgy", "taxanomy", "biodiversity", "microbiology", "botany", "zoology", "ecosystem", "adaptation", "reproduction" };
+        }
+
+        else if (category == "Family")
+        {
+            string[] words = { "family", "relatives", "generations", "lineage", "ancestors", "siblings", "kin", "clan", "household", "descendants", "heritage", "bloodline", "forebears", "progeny", "sister", "brother", "mother", "father", "aun", "uncle", "grandma", "grandpa", "grandparents" };
+        }
+
+        else if (category == "Countries")
+        {
+            string[] words = { "Canada", "USA", "UK", "France", "Germany", "China", "Japan", "Brazil", "India", "Australia", "Russia", "Mexico", "Argentina", "Italy", "Bulgatia", "Spain" };
+        }
+
+        else if (category == "Animals")
+        {
+            string[] words = { "mammals", "reptiles", "birds", "fish", "amphibians", "insect", "mollusk", "archnids", "lion", "elephant", "dolphin", "penguin", "tiger", "koala", "giraffe", "cheetah", "kangaroo", "gorilla", "eagle", "bear", "crocodile", "octopus", "antelope" };
+        }
+
+        else if (category == "Food")
+        {
+            string[] words = { "pizza", "salad", "spaghetti", "sushi", "burgers", "chokolate", "tacos", "pancakes", "steak", "sandwich", "soup", "popcorn", "curry", "rice", "apple" };
+        }
+
+        else if (category == "Subject")
+        {
+            string[] words = { "candle", "sofa", "laptop", "backpack", "sunglasses", "book", "bookshelf", "headphones", "clock", "umbrella", "mirror", "plant", "pilow", "blanket", "lamp" };
+        }
+    }
+
+        
+        Random random = new Random();
+
+        int randomWordIndex = random.Next(words.Length + 1);
+
+        string wordToGuess = words[randomWordIndex];
+        return wordToGuess;
+    
+    
+}
