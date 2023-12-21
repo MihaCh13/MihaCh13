@@ -1,12 +1,12 @@
 using System;
 using System.Text;
+using System.Collection.Generic;
 
 public class Program
 {
     public static void Main()
     {
         Console.WriteLine("-=HANGMAN=-");
-        GetRandomWord();
         string wordToGuess = GetRandomWord();
 
         // Saving the wrong answers.
@@ -136,90 +136,90 @@ public class Program
                 break;
             }
         }
-
     }
-}﻿
 
-static string GetRandomWord()
-{
-    Console.WriteLine("Choose number of players: ");
-    int players = int.Parse(Console.ReadLine());
-    string[] words = new string[0];
-
-    if (players > 1)
+    static string GetRandomWord()
     {
-        Console.WriteLine("Enter a word");
-        string word = Console.ReadLine();
-        words = new string[] { word };
-    }
-    else
-    {
-        Console.WriteLine("Choose category:");
-        Console.WriteLine("Geography & Nature | History | Biology | Family | Countries | Animals | Food | Subjects");
-        string category = Console.ReadLine();
-        string[] word;
+        Console.WriteLine("Choose number of players: ");
+        int players = int.Parse(Console.ReadLine());
+        string[] wordArray = new string[0];
 
-        if (category == "Geography & Nature")
+        if (players > 1)
         {
-            word = new string[] { "mountain", "horizon", "flower", "river", "clouds", "sunset", "beach", "starlight", "raindrop", "butterfly", "sapphire", "peak", "ocean", "earthquake", "hill", "lake", "valley" };
-        }
-
-        else if (category == "History")
-        {
-            word = new string[] { "history", "timeline", "events", "evolution", "progression", "development", "millestones", "origins", "legacy", "revolution", "growth", "advancement", "achievments", "changes" };
-        }
-
-        else if (category == "Biology")
-        {
-            word = new string[] { "biology", "anatomy", "physiology", "cells", "evolution", "genetics", "ecoclgy", "taxanomy", "biodiversity", "microbiology", "botany", "zoology", "ecosystem", "adaptation", "reproduction" };
-        }
-
-        else if (category == "Family")
-        {
-            word = new string[] { "family", "relatives", "generations", "lineage", "ancestors", "siblings", "kin", "clan", "household", "descendants", "heritage", "bloodline", "forebears", "progeny", "sister", "brother", "mother", "father", "aun", "uncle", "grandma", "grandpa", "grandparents" };
-        }
-
-        else if (category == "Countries")
-        {
-            word = new string[] { "Canada", "USA", "UK", "France", "Germany", "China", "Japan", "Brazil", "India", "Australia", "Russia", "Mexico", "Argentina", "Italy", "Bulgatia", "Spain" };
-        }
-
-        else if (category == "Animals")
-        {
-            word = new string[] { "mammals", "reptiles", "birds", "fish", "amphibians", "insect", "mollusk", "archnids", "lion", "elephant", "dolphin", "penguin", "tiger", "koala", "giraffe", "cheetah", "kangaroo", "gorilla", "eagle", "bear", "crocodile", "octopus", "antelope" };
-        }
-
-        else if (category == "Food")
-        {
-            word = new string[] { "pizza", "salad", "spaghetti", "sushi", "burgers", "chokolate", "tacos", "pancakes", "steak", "sandwich", "soup", "popcorn", "curry", "rice", "apple" };
-        }
-
-        else if (category == "Subject")
-        {
-            word = new string[] { "candle", "sofa", "laptop", "backpack", "sunglasses", "book", "bookshelf", "headphones", "clock", "umbrella", "mirror", "plant", "pilow", "blanket", "lamp" };
+            Console.WriteLine("Enter a word");
+            string word = Console.ReadLine();
+            wordArray = new string[] { word };
         }
         else
         {
-            word = new string[] { "mountain", "whispering", "adventure", "horizon", "midnight", "melodies", "magic", "meadows", "colors", "whispers", "moonlight", "shadows", "castles", "echoes", "flower", "river", "clouds", "silence", "laughter", "window", "garden", "sunset", "silhouette", "beach", "memory", "chocolate", "starlight", "telescope", "guitar", "raindrop", "feather", "journey", "laughter", "crystal", "umbrella", "compass", "whistle", "harmony", "diamond", "fantasy", "kaleidoscope", "paradise", "cascade", "butterfly", "serenade", "whisper", "serenity", "breeze", "treasure", "jewel", "symphony", "harbor", "harbor", "journey", "mystery", "enigma", "wisdom", "fortune", "passion", "promise", "meditation", "discovery", "miracle", "canvas", "brilliance", "sapphire", "soul", "eternity", "celebration", "ballet", "majesty", "whimsy", "cathedral", "serenity", "mystique", "phantom", "phenomenon", "captivation", "reflection", "magnificence", "regeneration", "illumination", "breathtaking", "mysterious", "captivating", "tranquility", "revelation" };
+            Console.WriteLine("Choose category:");
+            Console.WriteLine("Geography & Nature | History | Biology | Family | Countries | Animals | Food | Subjects");
+            string category = Console.ReadLine();
+            string[] words;
+
+            if (category == "Geography & Nature")
+            {
+                words = new string[] { "mountain", "horizon", "flower", "river", "clouds", "sunset", "beach", "starlight", "raindrop", "butterfly", "sapphire", "peak", "ocean", "earthquake", "hill", "lake", "valley" };
+            }
+
+            else if (category == "History")
+            {
+                words = new string[] { "history", "timeline", "events", "evolution", "progression", "development", "millestones", "origins", "legacy", "revolution", "growth", "advancement", "achievments", "changes" };
+            }
+
+            else if (category == "Biology")
+            {
+                words = new string[] { "biology", "anatomy", "physiology", "cells", "evolution", "genetics", "ecoclgy", "taxanomy", "biodiversity", "microbiology", "botany", "zoology", "ecosystem", "adaptation", "reproduction" };
+            }
+
+            else if (category == "Family")
+            {
+                words = new string[] { "family", "relatives", "generations", "lineage", "ancestors", "siblings", "kin", "clan", "household", "descendants", "heritage", "bloodline", "forebears", "progeny", "sister", "brother", "mother", "father", "aun", "uncle", "grandma", "grandpa", "grandparents" };
+            }
+
+            else if (category == "Countries")
+            {
+                words = new string[] { "Canada", "USA", "UK", "France", "Germany", "China", "Japan", "Brazil", "India", "Australia", "Russia", "Mexico", "Argentina", "Italy", "Bulgatia", "Spain" };
+            }
+
+            else if (category == "Animals")
+            {
+                words = new string[] { "mammals", "reptiles", "birds", "fish", "amphibians", "insect", "mollusk", "archnids", "lion", "elephant", "dolphin", "penguin", "tiger", "koala", "giraffe", "cheetah", "kangaroo", "gorilla", "eagle", "bear", "crocodile", "octopus", "antelope" };
+            }
+
+            else if (category == "Food")
+            {
+                words = new string[] { "pizza", "salad", "spaghetti", "sushi", "burgers", "chokolate", "tacos", "pancakes", "steak", "sandwich", "soup", "popcorn", "curry", "rice", "apple" };
+            }
+
+            else if (category == "Subject")
+            {
+                words = new string[] { "candle", "sofa", "laptop", "backpack", "sunglasses", "book", "bookshelf", "headphones", "clock", "umbrella", "mirror", "plant", "pilow", "blanket", "lamp" };
+            }
+            else
+            {
+                words = new string[] { "mountain", "whispering", "adventure", "horizon", "midnight", "melodies", "magic", "meadows", "colors", "whispers", "moonlight", "shadows", "castles", "echoes", "flower", "river", "clouds", "silence", "laughter", "window", "garden", "sunset", "silhouette", "beach", "memory", "chocolate", "starlight", "telescope", "guitar", "raindrop", "feather", "journey", "laughter", "crystal", "umbrella", "compass", "whistle", "harmony", "diamond", "fantasy", "kaleidoscope", "paradise", "cascade", "butterfly", "serenade", "whisper", "serenity", "breeze", "treasure", "jewel", "symphony", "harbor", "harbor", "journey", "mystery", "enigma", "wisdom", "fortune", "passion", "promise", "meditation", "discovery", "miracle", "canvas", "brilliance", "sapphire", "soul", "eternity", "celebration", "ballet", "majesty", "whimsy", "cathedral", "serenity", "mystique", "phantom", "phenomenon", "captivation", "reflection", "magnificence", "regeneration", "illumination", "breathtaking", "mysterious", "captivating", "tranquility", "revelation" };
+            }
         }
 
-        words = word;
+        Console.WriteLine("  _____");
+        Console.WriteLine(" |     |");
+        Console.WriteLine(" | ");
+        Console.WriteLine(" | ");
+        Console.WriteLine(" | ");
+        Console.WriteLine(" | ");
+        Console.WriteLine(" | ");
+        Console.WriteLine("===");
+
+        Console.WriteLine();
+
+        Random random = new Random();
+        int randomWordIndex = random.Next(words.Length + 1);
+        string wordToGuess = words[randomWordIndex];
+
+        return wordToGuess;
     }
-
-    Console.WriteLine("  _____");
-    Console.WriteLine(" |     |");
-    Console.WriteLine(" | ");
-    Console.WriteLine(" | ");
-    Console.WriteLine(" | ");
-    Console.WriteLine(" | ");
-    Console.WriteLine(" | ");
-    Console.WriteLine("===");
-
-    Console.WriteLine();
-
-    Random random = new Random();
-    int randomWordIndex = random.Next(words.Length + 1);
-    string wordToGuess = words[randomWordIndex];
-
-    return wordToGuess;
 }
+
+
+
