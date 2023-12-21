@@ -150,19 +150,21 @@ static string GetRandomWord()
     Console.WriteLine("Choose number of players: ");
     int players = int.Parse(Console.ReadLine());
     string[] words = new string[0];
-    string[] words;
+    string[] word;
 
     if (players > 1)
     {
         Console.WriteLine("Enter a word");
         string word = Console.ReadLine();
+        words = new string[] { word };
     }
     else
     {
         Console.WriteLine("Choose category:");
         Console.WriteLine("Geography & Nature | History | Biology | Family | Countries | Animals | Food | Subjects");
         string category = Console.ReadLine();
-        
+
+
         if (category == "Geography & Nature")
         {
             word = new string[] { "mountain", "horizon", "flower", "river", "clouds", "sunset", "beach", "starlight", "raindrop", "butterfly", "sapphire", "peak", "ocean", "earthquake", "hill", "lake", "valley" };
@@ -206,8 +208,9 @@ static string GetRandomWord()
         {
             word = new string[] { "mountain", "whispering", "adventure", "horizon", "midnight", "melodies", "magic", "meadows", "colors", "whispers", "moonlight", "shadows", "castles", "echoes", "flower", "river", "clouds", "silence", "laughter", "window", "garden", "sunset", "silhouette", "beach", "memory", "chocolate", "starlight", "telescope", "guitar", "raindrop", "feather", "journey", "laughter", "crystal", "umbrella", "compass", "whistle", "harmony", "diamond", "fantasy", "kaleidoscope", "paradise", "cascade", "butterfly", "serenade", "whisper", "serenity", "breeze", "treasure", "jewel", "symphony", "harbor", "harbor", "journey", "mystery", "enigma", "wisdom", "fortune", "passion", "promise", "meditation", "discovery", "miracle", "canvas", "brilliance", "sapphire", "soul", "eternity", "celebration", "ballet", "majesty", "whimsy", "cathedral", "serenity", "mystique", "phantom", "phenomenon", "captivation", "reflection", "magnificence", "regeneration", "illumination", "breathtaking", "mysterious", "captivating", "tranquility", "revelation" };
         }
+
+        words = word;
     }
-    words = word;
     Random random = new Random();
 
     int randomWordIndex = random.Next(words.Length + 1);
