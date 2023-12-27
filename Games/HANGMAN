@@ -1,0 +1,349 @@
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.Text;
+using System.ComponentModel.Design;
+
+namespace ConsoleApp3
+{
+    public class Program
+    {
+        public static string Translate(string key, string language)
+        {
+            Dictionary<string, string> translationsEn = new Dictionary<string, string>
+                    {
+                        { "youWin", "YOU WIN!" },
+                        { "correct", "Correct!" },
+                        { "wrongLetter", $"The letter '{{0}}' is wrong!" },
+                        { "correctWord", $"The correct word is '{{0}}'." },
+                        { "gameOver", "-=GAME OVER=-" },
+                        { "alreadyTried", $"You have already tried the letter '{{0}}'!" },
+                        { "guessLetter", "Guess a letter:" }
+                    };
+
+            Dictionary<string, string> translationsBg = new Dictionary<string, string>
+                    {
+                        { "youWin", "ТИ СПЕЧЕЛИ!" },
+                        { "correct", "Правилно!" },
+                        { "wrongLetter", $"Буквата '{{0}}' е грешна!" },
+                        { "correctWord", $"Правилната дума е '{{0}}'." },
+                        { "gameOver", "-=ИГРАТА СВЪРШИ=-" },
+                        { "alreadyTried", $"Вече пробва с буквата '{{0}}'!" },
+                        { "guessLetter", "Познай буква:" }
+                    };
+
+            Dictionary<string, string> translations = (language.ToLower() == "english") ? translationsEn : translationsBg;
+
+            if (translations.ContainsKey(key))
+            {
+                return translations[key];
+            }
+
+            return key; // Връщайте оригиналния текст, ако ключът не е намерен
+        }
+        public static void Main()
+        {
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding = Encoding.UTF8;
+
+            string language;
+
+            Console.WriteLine("-=HANGMAN=-");
+
+            language = ChooseLanguage(); // Call the ChooseLanguage method to set the language
+            string wordToGuess = GetRandomWord(language);
+
+            // Saving the wrong answers.
+            int wrongAttempts = 0;
+
+            // Saving all the letters a player has been used.
+            List<char> guessedLetters = new List<char>();
+
+            // Here we will save the player new word (the letters he has guessed) which will compare to the word he has to guess.
+            StringBuilder newString = new StringBuilder();
+            newString.Append('_', wordToGuess.Length);
+
+            while (wrongAttempts < 6)
+            {
+                Console.WriteLine(Translate("guessLetter", language));
+                Console.WriteLine();
+                Console.WriteLine(newString.ToString());
+                Console.WriteLine();
+
+                char currentChar = char.Parse(Console.ReadLine());
+
+                if (!guessedLetters.Contains(currentChar))
+                {
+                    guessedLetters.Add(currentChar);
+                }
+                else
+                {
+                    Console.WriteLine(string.Format(Translate("alreadyTried", language), currentChar));
+                    Console.WriteLine();
+                    continue;
+                }
+
+                if (!wordToGuess.Contains(currentChar))
+                {
+                    wrongAttempts++;
+
+                    if (wrongAttempts == 1)
+                    {
+                        Console.WriteLine("  _____");
+                        Console.WriteLine(" |     |");
+                        Console.WriteLine(" |     O");
+                        Console.WriteLine(" | ");
+                        Console.WriteLine(" | ");
+                        Console.WriteLine(" | ");
+                        Console.WriteLine(" | ");
+                        Console.WriteLine("===");
+                    }
+                    else if (wrongAttempts == 2)
+                    {
+                        Console.WriteLine("  _____");
+                        Console.WriteLine(" |     |");
+                        Console.WriteLine(" |     O");
+                        Console.WriteLine(" |    \\|");
+                        Console.WriteLine(" | ");
+                        Console.WriteLine(" | ");
+                        Console.WriteLine(" | ");
+                        Console.WriteLine("===");
+                    }
+                    else if (wrongAttempts == 3)
+                    {
+                        Console.WriteLine("  _____");
+                        Console.WriteLine(" |     |");
+                        Console.WriteLine(" |     O");
+                        Console.WriteLine(" |    \\|/");
+                        Console.WriteLine(" | ");
+                        Console.WriteLine(" | ");
+                        Console.WriteLine(" | ");
+                        Console.WriteLine("===");
+                    }
+                    else if (wrongAttempts == 4)
+                    {
+                        Console.WriteLine("  _____");
+                        Console.WriteLine(" |     |");
+                        Console.WriteLine(" |     O");
+                        Console.WriteLine(" |    \\|/");
+                        Console.WriteLine(" |     |");
+                        Console.WriteLine(" |    /");
+                        Console.WriteLine(" | ");
+                        Console.WriteLine("===");
+                    }
+                    else if (wrongAttempts == 5)
+                    {
+                        Console.WriteLine("  _____");
+                        Console.WriteLine(" |     |");
+                        Console.WriteLine(" |     O");
+                        Console.WriteLine(" |    \\|/");
+                        Console.WriteLine(" |     |");
+                        Console.WriteLine(" |    / \\");
+                        Console.WriteLine(" | ");
+                        Console.WriteLine("===");
+                    }
+                    else if (wrongAttempts == 6)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine(string.Format(Translate("wrongLetter", language), currentChar));
+                        Console.WriteLine();
+                        Console.WriteLine(string.Format(Translate("correctWord", language), wordToGuess));
+                        Console.WriteLine();
+                        Console.WriteLine(Translate("gameOver", language));
+                        break;
+                    }
+
+                    Console.WriteLine(string.Format(Translate("wrongLetter", language), currentChar));
+                    Console.WriteLine();
+                }
+                else
+                {
+                    // If wordToGuess contains the letter which the player has written we will replace the '_' with that letter.
+                    for (int i = 0; i < wordToGuess.Length; i++)
+                    {
+                        if (wordToGuess[i] == currentChar)
+                        {
+                            newString[i] = currentChar;
+                        }
+                    }
+
+                    Console.WriteLine();
+                    Console.WriteLine(Translate("correct", language));
+                    Console.WriteLine();
+                }
+
+                if (newString.ToString() == wordToGuess)
+                {
+                    Console.WriteLine(newString.ToString());
+                    Console.WriteLine();
+                    Console.WriteLine(Translate("youWin", language));
+                    break;
+                }
+            }
+        }
+
+        static string ChooseLanguage()
+        {
+            Console.WriteLine("Choose a language: Български or English");
+            return Console.ReadLine();
+        }
+
+        static string GetRandomWord(string language)
+        {
+            string wordToGuess = "";
+
+            if (language == "English")
+            {
+                Console.WriteLine("Don't forget to change the keyboard language");
+                Console.WriteLine("Choose number of players: ");
+                int players = int.Parse(Console.ReadLine());
+                string[] wordArray = new string[0];
+
+                if (players > 1)
+                {
+                    Console.WriteLine("Enter a word");
+                    string word = Console.ReadLine();
+                    wordArray = new string[] { word };
+                }
+                else
+                {
+                    Console.WriteLine("Choose category:");
+                    Console.WriteLine("Geography & Nature | History | Biology | Family | Countries | Animals | Food | Subjects | Random");
+                    string category = Console.ReadLine();
+                    string[] words;
+
+                    if (category == "Geography & Nature")
+                    {
+                        words = new string[] { "mountain", "horizon", "flower", "river", "clouds", "sunset", "beach", "starlight", "raindrop", "butterfly", "sapphire", "peak", "ocean", "earthquake", "hill", "lake", "valley" };
+                    }
+
+                    else if (category == "History")
+                    {
+                        words = new string[] { "history", "timeline", "events", "evolution", "progression", "development", "millestones", "origins", "legacy", "revolution", "growth", "advancement", "achievments", "changes" };
+                    }
+
+                    else if (category == "Biology")
+                    {
+                        words = new string[] { "biology", "anatomy", "physiology", "cells", "evolution", "genetics", "ecoclgy", "taxanomy", "biodiversity", "microbiology", "botany", "zoology", "ecosystem", "adaptation", "reproduction" };
+                    }
+
+                    else if (category == "Family")
+                    {
+                        words = new string[] { "family", "relatives", "generations", "lineage", "ancestors", "siblings", "kin", "clan", "household", "descendants", "heritage", "bloodline", "forebears", "progeny", "sister", "brother", "mother", "father", "aun", "uncle", "grandma", "grandpa", "grandparents" };
+                    }
+
+                    else if (category == "Countries")
+                    {
+                        words = new string[] { "Canada", "USA", "UK", "France", "Germany", "China", "Japan", "Brazil", "India", "Australia", "Russia", "Mexico", "Argentina", "Italy", "Bulgatia", "Spain" };
+                    }
+
+                    else if (category == "Animals")
+                    {
+                        words = new string[] { "mammals", "reptiles", "birds", "fish", "amphibians", "insect", "mollusk", "archnids", "lion", "elephant", "dolphin", "penguin", "tiger", "koala", "giraffe", "cheetah", "kangaroo", "gorilla", "eagle", "bear", "crocodile", "octopus", "antelope" };
+                    }
+
+                    else if (category == "Food")
+                    {
+                        words = new string[] { "pizza", "salad", "spaghetti", "sushi", "burgers", "chokolate", "tacos", "pancakes", "steak", "sandwich", "soup", "popcorn", "curry", "rice", "apple" };
+                    }
+
+                    else if (category == "Subject")
+                    {
+                        words = new string[] { "candle", "sofa", "laptop", "backpack", "sunglasses", "book", "bookshelf", "headphones", "clock", "umbrella", "mirror", "plant", "pilow", "blanket", "lamp" };
+                    }
+                    else
+                    {
+                        words = new string[] { "mountain", "whispering", "adventure", "horizon", "midnight", "melodies", "magic", "meadows", "colors", "whispers", "moonlight", "shadows", "castles", "echoes", "flower", "river", "clouds", "silence", "laughter", "window", "garden", "sunset", "silhouette", "beach", "memory", "chocolate", "starlight", "telescope", "guitar", "raindrop", "feather", "journey", "laughter", "crystal", "umbrella", "compass", "whistle", "harmony", "diamond", "fantasy", "kaleidoscope", "paradise", "cascade", "butterfly", "serenade", "whisper", "serenity", "breeze", "treasure", "jewel", "symphony", "harbor", "harbor", "journey", "mystery", "enigma", "wisdom", "fortune", "passion", "promise", "meditation", "discovery", "miracle", "canvas", "brilliance", "sapphire", "soul", "eternity", "celebration", "ballet", "majesty", "whimsy", "cathedral", "serenity", "mystique", "phantom", "phenomenon", "captivation", "reflection", "magnificence", "regeneration", "illumination", "breathtaking", "mysterious", "captivating", "tranquility", "revelation" };
+                    }
+
+                    Random random = new Random();
+                    int randomWordIndex = random.Next(words.Length + 1);
+                    wordToGuess = words[randomWordIndex];
+                }
+            }
+            else
+            {
+                Console.WriteLine("Не забравяй да смениш езика на клавиатурата");
+                Console.WriteLine("Посочете броя на играчите: ");
+                int players = int.Parse(Console.ReadLine());
+                string[] wordArray = new string[0];
+
+                if (players > 1)
+                {
+                    Console.WriteLine("Въведете дума");
+                    string word = Console.ReadLine();
+                    wordArray = new string[] { word };
+                }
+                else
+                {
+                    Console.WriteLine("Изберете категория");
+                    Console.WriteLine("География и природа | История | Биология | Семейство | Държави | Животни | Храна | Предмети | Случаен");
+                    string category = Console.ReadLine();
+                    string[] words;
+
+                    if (category == "География и природа")
+                    {
+                        words = new string[] { "планина", "хоризонт", "цвете", "река", "облаци", "залез", "плаж", "звездна светлина", "капка дъжд", "пеперуда", "сапфир", "връх", "океан", "земетресение", "хълм", "езеро", "долина" };
+                    }
+
+                    else if (category == "История")
+                    {
+                        words = new string[] { "история", "хронология", "събития", "еволюция", "прогрес", "развитие", "произход", "наследство", "революция", "растеж", "напредък", "постижения", "промени" };
+                    }
+
+                    else if (category == "Биология")
+                    {
+                        words = new string[] { "биология", "анатомия", "физиология", "клетки", "еволюция", "генетика", "екология", "таксономия", "биоразнообразие", "микробиология", "ботаника", "зоология", "екосистема", "адаптация", "репродукция" };
+                    }
+
+                    else if (category == "Семейство")
+                    {
+                        words = new string[] { "семейство", "роднини", "поколения", "родословие", "предци", "род", "клан", "домакинство", "потомци", "наследство", "кръвна линия", "предшественици ", "потомство", "сестра", "брат", "майка", "баща", "леля", "чичо", "баба", "дядо" };
+                    }
+
+                    else if (category == "Държави")
+                    {
+                        words = new string[] { "Канада", "САЩ", "Великобритания", "Франция", "Германия", "Китай", "Япония", "Бразилия", "Индия", "Австралия", "Русия", "Мексико", "Аржентина", "Италия", "България", "Испания" };
+                    }
+
+                    else if (category == "Животни")
+                    {
+                        words = new string[] { "бозайници", "влечуги", "птици", "риби", "амфибии", "насекоми", "мекотели", "архнидии", "лъв", "слон", "делфин", "пингвин", "тигър","коала", "жираф", "гепард", "кенгуру", "горила", "орел", "мечка", "крокодил", "октопод", "антилопа" };
+                    }
+
+                    else if (category == "Храна")
+                    {
+                        words = new string[] { "пица", "салата", "спагети", "суши", "бургери", "шоколад", "такос", "палачинки", "пържола", "сандвич", "супа", "пуканки", "къри", "ориз", "ябълка" };
+                    }
+
+                    else if (category == "Предмети")
+                    {
+                        words = new string[] { "свещ", "диван", "лаптоп", "раница", "слънчеви очила", "книга", "лавица", "слушалки", "часовник", "чадър", "огледало", "растение", "възглавница", "одеяло", "лампа" };
+                    }
+                    else
+                    {
+                        words = new string[] { "планина", "шепот", "приключение", "хоризонт", "полунощ", "мелодии", "магия", "ливади", "цветове", "шепот", "лунна светлина", "сенки", "замъци", "ехо", "цвете", "река", "облаци", "тишина", "смях", "прозорец", "градина", "залез", "силует", "плаж", "спомен", "шоколад", "звездна светлина", "телескоп", "китара", "дъждовна капка", "перо", "пътуване", "смях", "кристал", "чадър", "компас", "свирка", "хармония", "диамант", "фантазия", "калейдоскоп", "рай", "каскада", "пеперуда", "серенада", "шепот", "спокойствие", "бриз", "съкровище", "бижу", "симфония", "пристанище", "пристанище", "пътуване", "мистерия", "енигма", "мъдрост", "състояние", "страст", "обещание", "медитация", "откритие", "чудо", "платно", "блясък", "сапфир", "душа", "вечност", "празник", "балет", "величие", "причудливост", "катедрала", "спокойствие", "мистика", "фантом", "феномен", "завладяване", "отражение", "величие", "регенерация", "озарение", "спиращ дъха", "мистериозен", "завладяващ", "спокойствие", "откровение" };
+                    }
+
+                    Random random = new Random();
+                    int randomWordIndex = random.Next(words.Length + 1);
+                    wordToGuess = words[randomWordIndex];
+                }
+            }
+
+            Console.WriteLine("  _____");
+            Console.WriteLine(" |     |");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine("===");
+
+            Console.WriteLine();
+
+            return wordToGuess;
+        }
+    }
+}
+
