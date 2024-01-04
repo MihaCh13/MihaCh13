@@ -53,6 +53,17 @@ namespace ConsoleApp3
             language = ChooseLanguage(); // Call the ChooseLanguage method to set the language
             string wordToGuess = GetRandomWord(language);
 
+            Console.WriteLine("  _____");
+            Console.WriteLine(" |     |");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine(" | ");
+            Console.WriteLine("===");
+
+            Console.WriteLine();
+
             // Saving the wrong answers.
             int wrongAttempts = 0;
 
@@ -332,17 +343,6 @@ namespace ConsoleApp3
                     wordToGuess = words[randomWordIndex];
                 }
             }
-
-            Console.WriteLine("  _____");
-            Console.WriteLine(" |     |");
-            Console.WriteLine(" | ");
-            Console.WriteLine(" | ");
-            Console.WriteLine(" | ");
-            Console.WriteLine(" | ");
-            Console.WriteLine(" | ");
-            Console.WriteLine("===");
-
-            Console.WriteLine();
 
             return wordToGuess;
         }
