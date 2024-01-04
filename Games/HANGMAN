@@ -204,6 +204,7 @@ namespace ConsoleApp3
                     Console.WriteLine("Enter a word");
                     string word = Console.ReadLine();
                     wordArray = new string[] { word };
+                    wordToGuess = wordArray[0];
                 }
                 else
                 {
@@ -273,6 +274,7 @@ namespace ConsoleApp3
                     Console.WriteLine("Въведете дума");
                     string word = Console.ReadLine();
                     wordArray = new string[] { word };
+                    wordToGuess = wordArray[0];
                 }
                 else
                 {
@@ -308,7 +310,7 @@ namespace ConsoleApp3
 
                     else if (category == "Животни")
                     {
-                        words = new string[] { "бозайници", "влечуги", "птици", "риби", "амфибии", "насекоми", "мекотели", "архнидии", "лъв", "слон", "делфин", "пингвин", "тигър","коала", "жираф", "гепард", "кенгуру", "горила", "орел", "мечка", "крокодил", "октопод", "антилопа" };
+                        words = new string[] { "бозайници", "влечуги", "птици", "риби", "амфибии", "насекоми", "мекотели", "архнидии", "лъв", "слон", "делфин", "пингвин", "тигър", "коала", "жираф", "гепард", "кенгуру", "горила", "орел", "мечка", "крокодил", "октопод", "антилопа" };
                     }
 
                     else if (category == "Храна")
@@ -346,4 +348,3 @@ namespace ConsoleApp3
         }
     }
 }
-
