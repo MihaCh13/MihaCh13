@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ConsoleApp3
 {
@@ -40,6 +41,15 @@ namespace ConsoleApp3
 
             return key; // Връщайте оригиналния текст, ако ключът не е намерен
         }
+
+        private static ConsoleColor ConsoleColorFromRGB(int r, int g, int b)
+        {
+            if (r > g && r > b) return ConsoleColor.Red;
+            if (g > r && g > b) return ConsoleColor.Green;
+            if (b > r && b > g) return ConsoleColor.Blue;
+
+            return ConsoleColor.White;
+        }
         public static void Main()
         {
             Console.OutputEncoding = Encoding.UTF8;
@@ -47,11 +57,28 @@ namespace ConsoleApp3
 
             string language;
 
-            Console.WriteLine("-=HANGMAN=-");
+            string hangmanText = "-=HANGMAN=-";
+
+            for (int i = 0; i < hangmanText.Length; i++)
+            {
+                int r = (int)(255 - (i / (double)(hangmanText.Length - 1)) * 255);
+                int g = (int)((i / (double)(hangmanText.Length - 1)) * 255);
+                int b = 0;
+
+                ConsoleColor color = ConsoleColorFromRGB(r, g, b);
+
+                Console.ForegroundColor = color;
+                Console.Write(hangmanText[i]);
+            }
+
+            // Възстановяване на цвета по подразбиране
+            Console.ResetColor();
+            Console.WriteLine();
 
             language = ChooseLanguage(); // Call the ChooseLanguage method to set the language
             string wordToGuess = GetRandomWord(language);
 
+            Console.ForegroundColor = ConsoleColor.Yellow; // Промяна на цвета на текста
             Console.WriteLine("  _____");
             Console.WriteLine(" |     |");
             Console.WriteLine(" | ");
@@ -60,6 +87,7 @@ namespace ConsoleApp3
             Console.WriteLine(" | ");
             Console.WriteLine(" | ");
             Console.WriteLine("===");
+            Console.ResetColor(); // Възстановяване на цвета по подразбиране
 
             Console.WriteLine();
 
@@ -99,6 +127,7 @@ namespace ConsoleApp3
 
                     if (wrongAttempts == 1)
                     {
+                        Console.ForegroundColor = ConsoleColor.Yellow; // Промяна на цвета на текста
                         Console.WriteLine("  _____");
                         Console.WriteLine(" |     |");
                         Console.WriteLine(" |     O");
@@ -107,9 +136,11 @@ namespace ConsoleApp3
                         Console.WriteLine(" | ");
                         Console.WriteLine(" | ");
                         Console.WriteLine("===");
+                        Console.ResetColor(); // Възстановяване на цвета по подразбиране
                     }
                     else if (wrongAttempts == 2)
                     {
+                        Console.ForegroundColor = ConsoleColor.Yellow; // Промяна на цвета на текста
                         Console.WriteLine("  _____");
                         Console.WriteLine(" |     |");
                         Console.WriteLine(" |     O");
@@ -118,9 +149,11 @@ namespace ConsoleApp3
                         Console.WriteLine(" | ");
                         Console.WriteLine(" | ");
                         Console.WriteLine("===");
+                        Console.ResetColor(); // Възстановяване на цвета по подразбиране
                     }
                     else if (wrongAttempts == 3)
                     {
+                        Console.ForegroundColor = ConsoleColor.Yellow; // Промяна на цвета на текста
                         Console.WriteLine("  _____");
                         Console.WriteLine(" |     |");
                         Console.WriteLine(" |     O");
@@ -129,9 +162,11 @@ namespace ConsoleApp3
                         Console.WriteLine(" | ");
                         Console.WriteLine(" | ");
                         Console.WriteLine("===");
+                        Console.ResetColor(); // Възстановяване на цвета по подразбиране
                     }
                     else if (wrongAttempts == 4)
                     {
+                        Console.ForegroundColor = ConsoleColor.Yellow; // Промяна на цвета на текста
                         Console.WriteLine("  _____");
                         Console.WriteLine(" |     |");
                         Console.WriteLine(" |     O");
@@ -140,9 +175,11 @@ namespace ConsoleApp3
                         Console.WriteLine(" |    /");
                         Console.WriteLine(" | ");
                         Console.WriteLine("===");
+                        Console.ResetColor(); // Възстановяване на цвета по подразбиране
                     }
                     else if (wrongAttempts == 5)
                     {
+                        Console.ForegroundColor = ConsoleColor.Yellow; // Промяна на цвета на текста
                         Console.WriteLine("  _____");
                         Console.WriteLine(" |     |");
                         Console.WriteLine(" |     O");
@@ -151,6 +188,7 @@ namespace ConsoleApp3
                         Console.WriteLine(" |    / \\");
                         Console.WriteLine(" | ");
                         Console.WriteLine("===");
+                        Console.ResetColor(); // Възстановяване на цвета по подразбиране
                     }
                     else if (wrongAttempts == 6)
                     {
@@ -159,7 +197,9 @@ namespace ConsoleApp3
                         Console.WriteLine();
                         Console.WriteLine(string.Format(Translate("correctWord", language), wordToGuess));
                         Console.WriteLine();
-                        Console.WriteLine(Translate("gameOver", language));
+                        Console.ForegroundColor = ConsoleColor.Red; // Промяна на цвета на текста
+                        Console.WriteLine(Translate("gameOver", language)); // Изписване на текста
+                        Console.ResetColor(); // Възстановяване на цвета по подразбиране
                         break;
                     }
 
@@ -186,7 +226,9 @@ namespace ConsoleApp3
                 {
                     Console.WriteLine(newString.ToString());
                     Console.WriteLine();
-                    Console.WriteLine(Translate("youWin", language));
+                    Console.ForegroundColor = ConsoleColor.Green; // Промяна на цвета на текста
+                    Console.WriteLine(Translate("youWin", language)); // Изписване на текста
+                    Console.ResetColor(); // Възстановяване на цвета по подразбиране
                     break;
                 }
             }
@@ -194,7 +236,34 @@ namespace ConsoleApp3
 
         static string ChooseLanguage()
         {
-            Console.WriteLine("Choose a language: Български or English");
+            string text = "Choose a language: Български or English";
+
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(text.Substring(0, 22)); // Бъл в бяло
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(text.Substring(22, 3)); // гар в зелено
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(text.Substring(25, 3)); // ски в червено
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(text.Substring(28, 3));
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(text.Substring(31, 3)); // En в червено
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(text.Substring(34, 3)); // gli в бяло
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(text.Substring(37)); // sh в синьо
+
+            Console.WriteLine();
+
+            Console.ResetColor(); // Възстановяване на оригиналния цвят
             return Console.ReadLine();
         }
 
@@ -204,22 +273,97 @@ namespace ConsoleApp3
 
             if (language == "English")
             {
+                Console.WriteLine();
                 Console.WriteLine("Don't forget to change the keyboard language");
-                Console.WriteLine("Choose number of players: ");
+                Console.Write("Choose number of players: ");
                 int players = int.Parse(Console.ReadLine());
                 string[] wordArray = new string[0];
 
                 if (players > 1)
                 {
-                    Console.WriteLine("Enter a word");
-                    string word = Console.ReadLine();
+                    Console.WriteLine();
+                    Console.Write("Enter a word: ");
+
+                    static string ReadHiddenWord()
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        StringBuilder hiddenWord = new StringBuilder();
+                        ConsoleKeyInfo key;
+
+                        do
+                        {
+                            key = Console.ReadKey(true);
+
+                            if (key.Key != ConsoleKey.Enter) // Продължавайте четенето до натискане на Enter
+                            {
+                                hiddenWord.Append(key.KeyChar);
+                                Console.Write("*"); // Показвайте звездичка вместо реалния символ
+                            }
+                        } while (key.Key != ConsoleKey.Enter);
+
+                        Console.WriteLine(); // Нов ред след въвеждането
+                        return hiddenWord.ToString();
+                    }
+
+
+                    string word = ReadHiddenWord();
                     wordArray = new string[] { word };
                     wordToGuess = wordArray[0];
                 }
                 else
                 {
-                    Console.WriteLine("Choose category:");
-                    Console.WriteLine("Geography & Nature | History | Biology | Family | Countries | Animals | Food | Subjects | Random");
+                    Console.WriteLine();
+                    Console.Write("Choose category: ");
+                    string categories = "Geography & Nature -|- History -|- Biology -|- Family -|- Countries -|- Animals -|- Food -|- Subjects -|- Random";
+
+                    string[] wordSplit = categories.Split('-');
+
+                    for (int i = 0; i < wordSplit.Length; i++)
+                    {
+                        ConsoleColor color = ConsoleColor.White;
+
+                        switch (wordSplit[i].Trim()) // Използваме Trim(), за да премахнем евентуални интервали около думите
+                        {
+                            case "Geography & Nature":
+                                color = ConsoleColor.Green; 
+                                break;
+                            case "History":
+                                color = ConsoleColor.DarkRed;
+                                break;
+                            case "Biology":
+                                color = ConsoleColor.Cyan;
+                                break;
+                            case "Family":
+                                color = ConsoleColor.Magenta;
+                                break;
+                            case "Countries":
+                                color = ConsoleColor.Blue;
+                                break;
+                            case "Animals":
+                                color = ConsoleColor.Yellow;
+                                break;
+                            case "Food":
+                                color = ConsoleColor.Red;
+                                break;
+                            case "Subjects":
+                                color = ConsoleColor.DarkYellow;
+                                break;
+                            case "Random":
+                                color = ConsoleColor.DarkMagenta;
+                                break;
+                            case "|":
+                                color = ConsoleColor.White;
+                                break;
+                            default:
+                                color = ConsoleColor.White;
+                                break;
+                        }
+
+                        Console.ForegroundColor = color;
+                        Console.Write(wordSplit[i]);
+                    }
+                    Console.WriteLine();
+
                     string category = Console.ReadLine();
                     string[] words;
 
@@ -274,22 +418,93 @@ namespace ConsoleApp3
             }
             else
             {
+                Console.WriteLine();
                 Console.WriteLine("Не забравяй да смениш езика на клавиатурата");
-                Console.WriteLine("Посочете броя на играчите: ");
+                Console.Write("Посочете броя на играчите: ");
                 int players = int.Parse(Console.ReadLine());
                 string[] wordArray = new string[0];
 
                 if (players > 1)
                 {
-                    Console.WriteLine("Въведете дума");
-                    string word = Console.ReadLine();
+                    Console.WriteLine();
+                    static string ReadHiddenWord()
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                        StringBuilder hiddenWord = new StringBuilder();
+                        ConsoleKeyInfo key;
+
+                        do
+                        {
+                            key = Console.ReadKey(true);
+
+                            if (key.Key != ConsoleKey.Enter) // Продължавайте четенето до натискане на Enter
+                            {
+                                hiddenWord.Append(key.KeyChar);
+                                Console.Write("*"); // Показвайте звездичка вместо реалния символ
+                            }
+                        } while (key.Key != ConsoleKey.Enter);
+
+                        Console.WriteLine(); // Нов ред след въвеждането
+                        return hiddenWord.ToString();
+                    }
+
+                    string word = ReadHiddenWord();
                     wordArray = new string[] { word };
                     wordToGuess = wordArray[0];
                 }
                 else
                 {
-                    Console.WriteLine("Изберете категория");
-                    Console.WriteLine("География и природа | История | Биология | Семейство | Държави | Животни | Храна | Предмети | Случаен");
+                    Console.WriteLine();
+                    Console.Write("Изберете категория: ");
+                    string categories = "География и природа -|- История -|- Биология -|- Семейство -|- Държави -|- Животни -|- Храна -|- Предмети -|- Случаен";
+
+                    string[] wordSplit = categories.Split('-');
+
+                    for (int i = 0; i < wordSplit.Length; i++)
+                    {
+                        ConsoleColor color = ConsoleColor.White;
+
+                        switch (wordSplit[i].Trim()) // Използваме Trim(), за да премахнем евентуални интервали около думите
+                        {
+                            case "География и природа":
+                                color = ConsoleColor.Green;
+                                break;
+                            case "История":
+                                color = ConsoleColor.DarkRed;
+                                break;
+                            case "Биология":
+                                color = ConsoleColor.Cyan;
+                                break;
+                            case "Семейство":
+                                color = ConsoleColor.Magenta;
+                                break;
+                            case "Държави ":
+                                color = ConsoleColor.Blue;
+                                break;
+                            case "Животни":
+                                color = ConsoleColor.Yellow;
+                                break;
+                            case "Храна":
+                                color = ConsoleColor.Red;
+                                break;
+                            case "Предмети":
+                                color = ConsoleColor.DarkYellow;
+                                break;
+                            case "Случаен":
+                                color = ConsoleColor.DarkMagenta;
+                                break;
+                            case "|":
+                                color = ConsoleColor.White;
+                                break;
+                            default:
+                                color = ConsoleColor.White;
+                                break;
+                        }
+
+                        Console.ForegroundColor = color;
+                        Console.Write(wordSplit[i]);
+                    }
+                    Console.WriteLine();
                     string category = Console.ReadLine();
                     string[] words;
 
@@ -342,7 +557,6 @@ namespace ConsoleApp3
                     wordToGuess = words[randomWordIndex];
                 }
             }
-
             return wordToGuess;
         }
     }
