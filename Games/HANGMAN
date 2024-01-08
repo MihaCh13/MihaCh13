@@ -97,9 +97,11 @@ namespace ConsoleApp3
             // Saving all the letters a player has been used.
             List<char> guessedLetters = new List<char>();
 
+            Console.ForegroundColor = ConsoleColor.White;
             // Here we will save the player new word (the letters he has guessed) which will compare to the word he has to guess.
             StringBuilder newString = new StringBuilder();
             newString.Append('_', wordToGuess.Length);
+            Console.ResetColor();
 
             while (wrongAttempts < 6)
             {
@@ -108,7 +110,9 @@ namespace ConsoleApp3
                 Console.WriteLine(newString.ToString());
                 Console.WriteLine();
 
+                Console.ForegroundColor = ConsoleColor.Green;
                 char currentChar = char.Parse(Console.ReadLine());
+                Console.ResetColor();
 
                 if (!guessedLetters.Contains(currentChar))
                 {
@@ -264,7 +268,10 @@ namespace ConsoleApp3
             Console.WriteLine();
 
             Console.ResetColor(); // Възстановяване на оригиналния цвят
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
             return Console.ReadLine();
+            Console.ResetColor();
         }
 
         static string GetRandomWord(string language)
@@ -274,8 +281,10 @@ namespace ConsoleApp3
             if (language == "English")
             {
                 Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Don't forget to change the keyboard language");
                 Console.Write("Choose number of players: ");
+                Console.ResetColor();
                 int players = int.Parse(Console.ReadLine());
                 string[] wordArray = new string[0];
 
@@ -325,7 +334,7 @@ namespace ConsoleApp3
                         switch (wordSplit[i].Trim()) // Използваме Trim(), за да премахнем евентуални интервали около думите
                         {
                             case "Geography & Nature":
-                                color = ConsoleColor.Green; 
+                                color = ConsoleColor.Green;
                                 break;
                             case "History":
                                 color = ConsoleColor.DarkRed;
@@ -364,7 +373,9 @@ namespace ConsoleApp3
                     }
                     Console.WriteLine();
 
+                    Console.ForegroundColor = ConsoleColor.Magenta;
                     string category = Console.ReadLine();
+                    Console.ResetColor();
                     string[] words;
 
                     if (category == "Geography & Nature")
@@ -419,8 +430,10 @@ namespace ConsoleApp3
             else
             {
                 Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Не забравяй да смениш езика на клавиатурата");
                 Console.Write("Посочете броя на играчите: ");
+                Console.ResetColor();
                 int players = int.Parse(Console.ReadLine());
                 string[] wordArray = new string[0];
 
@@ -505,7 +518,9 @@ namespace ConsoleApp3
                         Console.Write(wordSplit[i]);
                     }
                     Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.Magenta;
                     string category = Console.ReadLine();
+                    Console.ResetColor();
                     string[] words;
 
                     if (category == "География и природа")
