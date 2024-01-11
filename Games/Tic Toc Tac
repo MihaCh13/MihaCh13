@@ -1,0 +1,82 @@
+using System;
+
+class Program
+{
+    static char[] board = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+    static int playerTurn = 1; // Играч 1 е X, Играч 2 е O
+
+    static void Main()
+    {
+        int choice;
+        bool isInputValid;
+
+        do
+        {
+            DrawBoard();
+            Console.WriteLine($"Играч {playerTurn}, въведи номер на свободно поле:");
+
+            do
+            {
+                isInputValid = int.TryParse(Console.ReadLine(), out choice);
+
+                if (!isInputValid || choice < 1 || choice > 9 || board[choice - 1] == 'X' || board[choice - 1] == 'O')
+                {
+                    Console.WriteLine("Невалиден вход. Опитай отново.");
+                    isInputValid = false;
+                }
+
+            } while (!isInputValid);
+
+            UpdateBoard(choice);
+        } while (!CheckForWin() && !CheckForTie());
+
+        Console.Clear();
+        DrawBoard();
+
+        if (CheckForWin())
+        {
+            Console.WriteLine($"Играч {playerTurn} печели!");
+        }
+        else
+        {
+            Console.WriteLine("Равенство. Няма победител.");
+        }
+    }
+
+    static void DrawBoard()
+    {
+        Console.Clear();
+        Console.WriteLine($" {board[0]} | {board[1]} | {board[2]} ");
+        Console.WriteLine("-----------");
+        Console.WriteLine($" {board[3]} | {board[4]} | {board[5]} ");
+        Console.WriteLine("-----------");
+        Console.WriteLine($" {board[6]} | {board[7]} | {board[8]} ");
+    }
+
+    static void UpdateBoard(int choice)
+    {
+        board[choice - 1] = (playerTurn % 2 == 0) ? 'O' : 'X';
+        playerTurn++;
+    }
+
+    static bool CheckForWin()
+    {
+        // Проверка за победител по редове, колони и диагонали
+        return (CheckLine(0, 1, 2) || CheckLine(3, 4, 5) || CheckLine(6, 7, 8) ||
+                CheckLine(0, 3, 6) || CheckLine(1, 4, 7) || CheckLine(2, 5, 8) ||
+                CheckLine(0, 4, 8) || CheckLine(2, 4, 6));
+    }
+
+    static bool CheckLine(int a, int b, int c)
+    {
+        return (board[a] == board[b] && board[b] == board[c]);
+    }
+
+    static bool CheckForTie()
+    {
+        // Проверка за равенство
+        return board[0] != '1' && board[1] != '2' && board[2] != '3' &&
+               board[3] != '4' && board[4] != '5' && board[5] != '6' &&
+               board[6] != '7' && board[7] != '8' && board[8] != '9';
+    }
+}
