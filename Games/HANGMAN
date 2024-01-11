@@ -291,7 +291,9 @@ namespace ConsoleApp3
                 if (players > 1)
                 {
                     Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
                     Console.Write("Enter a word: ");
+                    Console.ResetColor();
 
                     static string ReadHiddenWord()
                     {
@@ -440,6 +442,10 @@ namespace ConsoleApp3
                 if (players > 1)
                 {
                     Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.Write("Въведете дума: ");
+                    Console.ResetColor();
+
                     static string ReadHiddenWord()
                     {
                         Console.ForegroundColor = ConsoleColor.DarkMagenta;
