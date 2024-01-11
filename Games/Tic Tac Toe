@@ -46,11 +46,40 @@ class Program
     static void DrawBoard()
     {
         Console.Clear();
-        Console.WriteLine($" {board[0]} | {board[1]} | {board[2]} ");
-        Console.WriteLine("-----------");
-        Console.WriteLine($" {board[3]} | {board[4]} | {board[5]} ");
-        Console.WriteLine("-----------");
-        Console.WriteLine($" {board[6]} | {board[7]} | {board[8]} ");
+
+        for (int i = 0; i < board.Length; i++)
+        {
+            if (board[i] == 'X')
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(" X ");
+                Console.ResetColor();
+            }
+            else if (board[i] == 'O')
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(" O ");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.Write($" {board[i]} ");
+            }
+
+            if ((i + 1) % 3 == 0 && i != 8)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("\n---+---+---");
+                Console.ResetColor();
+            }
+            else if (i != 8)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Write("|");
+                Console.ResetColor();
+            }
+        }
+        Console.WriteLine("\n");
     }
 
     static void UpdateBoard(int choice)
