@@ -57,6 +57,14 @@ class Program
     {
         board[choice - 1] = (playerTurn % 2 == 0) ? 'O' : 'X';
         playerTurn++;
+        if (playerTurn % 2 == 0)
+        {
+            playerTurn = 2;
+        }
+        else
+        {
+            playerTurn = 1;
+        }
     }
 
     static bool CheckForWin()
