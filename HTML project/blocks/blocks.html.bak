@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="bg" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Блокове (float)</title>
+<style>
+* { box-sizing: border-box;}
+.baseBlocks {
+	width: 700px;
+	margin: 0 auto;
+	padding: 0;
+}
+#block1 {
+	background: #95ebf9;
+}
+#block2 {
+	background: #eee;
+	padding: 10px;
+}
+
+#block3 {
+	display: inline-block;
+	width: 60%;
+	height: 300px;
+	margin: 0;
+	padding: 10px;
+	background: #b2fdc9;
+}
+#block4 {
+	width: 40%;
+	height: 300px;
+	float: right;
+	background: #f7f7ae;
+}
+span {
+	font-weight:bold;
+}
+div[id] {
+	text-align: center; padding: 10px;
+}
+</style>
+</head>
+<body>
+<div id="block1" class="baseBlocks">
+	<span>блок 1</span>
+</div>
+<div id="block2" class="baseBlocks">
+	<div id="block3">
+		<span>блок 3</span>
+	</div>
+	<div id="block4">
+		<span>блок 4</span>
+	</div>
+	<span>блок 2</span>
+</div>
+
+</body>
+</html>
