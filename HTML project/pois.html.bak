@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="bg" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title></title>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+<div id="menu-mob" onclick="this.classList.toggle('open'); document.getElementById('menu').classList.toggle('open')"></div>
+<div id="pois" class="pageContainer">
+	<div id="headerContainer">
+		<div id="header" class="baseBlock">
+			<div id="logo"><a href="index.html">Карлово</a></div>
+			<div id="menu">
+				<a href="pois.html">Забележителности</a>
+				<a href="nature.html">Природа</a>
+				<a href="events.html">Празници</a>
+			</div>
+		</div>
+	</div>
+	<div id="topTitle" class="baseBlock">
+		<h1>Забележителности</h1>
+	</div>
+	
+	<div id="page" class="baseBlock">
+	
+		<div id="1" class="poiBlock">
+			<p>Национален музей „Васил Левски”</p>
+			<img src="images/levski-museum-.jpg" alt="Къщата е едноетажна възрожденска сграда с долепена ниска пристройка" title="Родната къща на Васил Левски" />
+			<div>
+				<p>Родната къща на Апостола, построена в края на ХVІІІ век, е възстановена през 1933 г. и е отворена за посещение като музей през 1937 г.</p>
+				<p>Комплексът включва още експозиционна зала, Чардаклиевата къща, Онбашиевата къща и параклиса „Всех святих болгарских”, където се съхранява част от косите на Апостола.</p>
+				<p>Музеят е включен в „100-те национални туристически обекта”.</p>
+				виж на картата
+			</div>
+		</div>
+		
+		<div id="2" class="poiBlock">
+			<p>Исторически музей – Карлово</p>
+			<img src="" />
+			<div>
+				<p></p>
+			</div>
+		</div>
+		
+		<div id="3" class="poiBlock">
+			<p>Бухаловият хан</p>
+			<img src="" />
+			<div class="poiText">
+				<p></p>
+			</div>
+		</div>
+		
+		<div id="4" class="poiBlock">
+			<p>Паметник на Васил Левски.</p>
+			<img src="" />
+			<div class="poiText">
+				<p></p>
+			</div>
+		</div>
+		
+		<div id="5" class="poiBlock">
+			<p>Църква „Свети Николай”</p>
+			<img src="" class="right-img" />
+			<div class="poiText">
+				<p></p>
+			</div>
+		</div>
+		
+		<br class="clear" />
+	</div>
+	<div id="footer" class="baseBlock">
+		<p>Copyright © 2021 Domino EOOD. All Rights Reserved.</p>
+	</div>
+</div>
+</body>
+</html>
