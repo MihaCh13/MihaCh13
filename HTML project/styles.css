@@ -1,331 +1,558 @@
-﻿/* CSS */
+/* CSS */
+
+/* Импортиране на шрифт от Google Fonts - Roboto с дебелина 400 и 700 */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Универсални стилове за всички елементи, включително псевдоелементи и псевдокласове */
 *, *:after, *:before {
-  box-sizing: border-box;
+  box-sizing: border-box;  /* Позволява боксов модел за всички елементи */
 }
+
+/* Нулиране на външните отстъпи за елемента div */
 div {
-	margin: 0;
+  margin: 0;  /* Нулиране на външните отстъпи */
 }
 
+/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА!*/
+/* Подравняване на текст в дясно */
 .right {
-	text-align: right;
-	font-family: Calibri;
-	font-size: 10px;
-	color: blue;
-	}
-#red{
-background-color:red;
-	}
+  text-align: right;      /* Текста се подравнява в дясно */
+  font-family: Calibri;   /* Използване на шрифта Calibri */
+  font-size: 10px;        /* Размер на шрифта */
+  color: blue;          /* Цвят на текста */
 }
 
+/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА!*/
+/* Стил за фон с червен цвят за елемент с идентификатор "red" */
+#red {
+  background-color: red;  /* Червен фон */
+}
+
+/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА!*/
+/* Стилове за основния елемент body */
 body {
-	background-color: #bbb;
-	margin: 0;
-	font-family: 'Roboto', sans-serif;
-	font-size: 12px;
-	color: #282828;
+  background-color: #bbb;          /* Цвят на фона на body */
+  margin: 0;                         /* Нулиране на външните отстъпи на body */
+  font-family: 'Roboto', sans-serif; /* Използване на шрифта Roboto и подобни безсерифни шрифтове */
+  font-size: 12px;                   /* Размер на шрифта */
+  color: #282828;                  /* Цвят на текста */
 }
-#home {
-	background-image: url('images/home-page-image.jpg');
-	background-repeat: no-repeat;
-	background-position: center -60px;
-	background-size: 1200px auto;
-}
+
+/* Стилове за елемент с идентификатор "home" и "pois" */
+#home, 
 #pois {
-	background-image: url('images/pois-image.jpg');
-	background-repeat: no-repeat;
-	background-position: center -60px;
-	background-size: 1200px auto;
+  background-image: url('images/pois-image.jpg');   /* Изображение на фона */
+  background-repeat: no-repeat;                     /* Не се повтаря на фона */
+  background-position: center -60px;                /* Позиция на фона */
+  background-size: 1200px auto;                     /* Размер на фона */
 }
+
+/*ЗА ПРОЗРАЧНИЯ ЧЕРЕН ФОН*/
+/* Стилове за контейнера на страницата */
 .pageContainer {
-	background-color: white;
-	width: 100%;
-	max-width: 1200px;
-	margin: 0 auto;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+	background-color: rgba(0, 0, 0, 0.4);  /* Цвят на фона с прозрачност */
+	width: 100%;                             /* Ширина на контейнера на страницата */
+	max-width: 1200px;                       /* Максимална ширина на контейнера */
+	margin: 0 auto;                          /* Автоматичен отстъп отляво и отдясно за центриране */
+	border-left: 1px solid black;          /* Лява граница */
+	border-right: 1px solid black;         /* Дясна граница */
 }
+/*ЦВЯТ НА ГЛАВНОТО МЕНЮ*/
+/* Стилове за контейнера на хедъра */
 #headerContainer {
-	background: rgba(243,160,50,.75);
-	background: linear-gradient(to bottom, rgb(198, 124, 26) 0%, rgba(234, 140, 16, 0.8) 80%, rgba(243, 160, 50, .5) 100%);
-	width: 100%;
-	height: 60px;
+	background: rgba(255, 142, 182, 0.75);  /* Цвят на фона с прозрачност */
+	background: linear-gradient(to bottom, rgba(214, 52, 255, 0.5) 0%, rgba(227, 113, 255, 0.5) 80%, rgba(239, 176, 255, 0.5) 100%);  /* Линеен градиент на фона */
+	width: 100%;                              /* Ширина на контейнера на хедъра */
+	height: 60px;                             /* Височина на контейнера на хедъра */
 }
+
+/* Стил за хедъра */
+/*ЗА ХИПЕР ЛИНКОВЕТЕ НА МЕНЮТО*/
 #header {
-	padding: 4px 0;
+	padding: 4px 0;                         /* Вътрешен отстъп от горе и долу за хедъра */
+    display: flex;
+	text-align: left;
+
 }
+
+/* Общ стил за базови блокове с ограничена ширина */
+/*ЗА ХИПЕР ЛИНКОВЕТЕ НА МЕНЮТО*/
 .baseBlock {
-	width: 100%;
-	max-width: 1000px;
-	margin: 0 auto;
+	width: 100%;                           /* Ширина на блока */
+	max-width: 1000px;                      /* Максимална ширина на блока */
+	margin: 0 auto;                        /* Автоматичен отстъп отляво и отдясно за центриране */
 }
+
+/* Стилове за логото */
 #logo {
-	width: 180px;
-	display: inline-block;
-	z-index: 999;
-	position: relative;
+	width: 180px;                          /* Ширина на логото */
+	display: inline-block;                 /* Показване на логото като inline-block за правилно разпределение */
+	z-index: 999;                          /* Заден план на логото */
+	position: relative;                    /* Позиция на логото - relative за позициониране */
 }
 
+/* Стилове за менюто */
 #menu {
-	display: inline-block;
+	display: inline-block;  /* Показване на менюто като inline-block за правилно разпределение */
 }
-#logo a {
-	color: #fff;
-	font-size: 2.1em;
-	font-weight: bold;
-	display: inline-block;
-	text-decoration: none;
+.siteLogo{
+	float: left;
+	margin: 5 0 0px 20px; /* Отстъпи отгоре, отдолу, отляво и отдясно */
 }
-#logo a:before {
-	content: "\a0";
-	background-image: url('images/Karlovo-gerb.gif');
-	background-repeat: no-repeat;
-	background-size: 36px auto;
-	background-position: 4px 0;
-	width: 50px;
-	height: 60px;
-	display: inline-block;
-	vertical-align: middle;
-}
+  /* Стилове за връзките в логото и менюто 
+  #logo a {
+	color: #fff;            /* Цвят на текста 
+	font-size: 2.1em;       /* Големина на шрифта 
+	font-weight: bold;      /* Дебелина на шрифта 
+	display: inline-block;  /* Показване на връзката като inline-block за правилно разпределение 
+	text-decoration: none;  /* Не подчертавай текста с линия 
+  }*/
+  
+  /* Стилове за визуалния вид на логото 
+  #logo a:before {
+	content: "\a0";                                     /* Заместване на съдържанието с интервал 
+	background-image: url('images/Karlovo-gerb.gif');   /* Поставяне на изображение като фон 
+	background-repeat: no-repeat;                       /* Не повтаряй изображението 
+	background-size: 36px auto;                         /* Големина на изображението 
+	background-position: 4px 0;                         /* Позиция на изображението 
+	width: 50px;                                        /* Ширина на областта за изображението 
+	height: 60px;                                       /* Височина на областта за изображението 
+	display: inline-block;                              /* Показване на изображението като inline-block за правилно разпределение
+	vertical-align: middle;                             /* Центриране вертикално на изображението 
+  }*/
+  
+/* Стилове за навигационното меню */
 #menu a {
-	color: #fff;
-	font-size: 1.4em;
-	font-weight: bold;
-	display: inline-block;
-	text-decoration: none;
-	text-transform: uppercase;
-	margin: 3px 10px;
-}
-#topTitle {
-	padding: 100px 0 0;
-	min-height: 251px;
-}
-#pois #topTitle {
-	min-height: 260px;
-}
-#topTitle h1 {
-	color: #fff;
-	font-size: 4.2em;
-	font-weight: bold;
-	text-align: center;
-	text-shadow: 0 0 5px #000; 
-	margin: 0;
-}
-.accentBlock {
-	background-color: #ffffff;
-	box-shadow: 0 0 5px #000;
-	width: 316px;
-	height: 210px;
-	float: left;
-	margin-left: 26px;
-	padding: 30px 40px;
-}
-.orange {
-	background-color: #f3a032;
-	margin-left: 0;
-}
-.accentBlock h3 {
-	color: #282828;
-	font-size: 2em;
-	font-weight: bold;
-	margin: 0 0 10px 0;
-}
-.accentBlock p {
-	color: #282828;
-	margin: 3px 0;
-	line-height: 200%;
-}
-.accentBlock a {
-	color: #fff;
-	background-color: #f3a032;
-	font-size: 1.2em;
-	font-weight: bold;
-	padding: 10px 20px;
-	border-radius: 19px;
-	text-decoration: none;
-	text-transform: uppercase;
-	margin: 10px 0;
-	display: inline-block;
-}
-.accentBlock.orange a {
-	color: #282828;
-	background-color: #ffffff;
-}
-.accentBlock.orange h3, .accentBlock.orange p {
-	color: #ffffff;
-}
-h2 {
-	font-size: 2em;
-	margin: 0 0 10px;
-	text-align: center;
-	line-height: 1.5em;
-	width: 100%;
-	background-color:#ff6600;
-}
-h2.roza {
-	color: #e22670;
-	margin-top: 35px;
-}
-.poiBlock h2 {
-	
-}
-#page {
-	padding: 25px 0;
-}
-.clear {
-	clear: both;
-}
-#page p {
-	margin: 3px;
-	font-size: 1.2em;
-}
-#page p.subtitle {
-	text-align: center;
-	font-size: 1.3em;
-	max-width: 70%;
-	margin: 2px auto 20px;
-}
-#page .x4cols p.miniBlock {
-	width: 233px;
-	line-height: 200%;
-	float: left;
-	margin: 30px 16px 0 4px;
-}
-#page .x4cols p.miniBlock:last-of-type {
-	margin-right: 4px;
-}
-#page p.miniBlock:before {
-	content: "\a0";
-	background-image: url('images/circle.png');
-	background-repeat: no-repeat;
-	background-position: left top;
-	width: 36px;
-	height: 36px;
-	display: block;
-	margin-bottom: 20px;
-}
-#footer {
-	padding: 30px 0 10px;
-}
-#footer p {
-	font-size: .9em;
-	text-align: center;
-	margin: 10px auto;
+	color: #fff;                 /* Цвят на текста */
+	font-size: 1.4em;              /* Големина на шрифта */
+	font-weight: bold;             /* Дебелина на шрифта */
+	display: inline-block;         /* Показване като inline блок за правилно разпределение */
+	text-decoration: none;         /* Не подчертавай текста с линия */
+	text-transform: uppercase;     /* Преобразуване на текста в главни букви */
+	margin: 3px 10px;              /* Отстъпи отгоре и отдясно на текста */
 }
 
+/* Стилове за заглавието на страницата */
+#topTitle {
+	padding: 100px 0 0;            /* Отстъп отгоре на контейнера */
+	min-height: 251px;             /* Минимална височина на контейнера */
+}
+
+/* Прилагане на стилове за заглавието на страницата при определени условия */
+#pois #topTitle {
+	min-height: 260px;             /* Промяна на минималната височина при условие */
+}
+
+/* Стилове за заглавието h1 */
+#topTitle h1 {
+	color: #fff;                 /* Цвят на текста */
+	font-size: 4.2em;              /* Големина на шрифта */
+	font-weight: bold;             /* Дебелина на шрифта */
+	text-align: center;            /* Центриране на текста */
+	text-shadow: 0 0 5px #000;   /* Добавяне на тень на текста */
+	margin: 0;                     /* Нулиране на външния отстъп */
+}
+  
+/*НЕ СЕ ИЗПОЛЗВА*/
+/* Стилове за блок с акцент (accentBlock) */
+.accentBlock {
+	background-color: #ffffff;  /* Цвят на фона */
+	box-shadow: 0 0 5px #000;   /* Тънка сянка с цвят черен */
+	width: 316px;                 /* Ширина на блока */
+	height: 210px;                /* Височина на блока */
+	float: left;                  /* Поставя блока вляво от съдържанието му */
+	margin-left: 15px;            /* Външен отстъп от лявата страна на блока */
+	padding: 30px 40px;           /* Вътрешен отстъп от всички страни на блока */
+	margin-right: 17px;           /* Външен отстъп от дясната страна на блока */
+}
+
+/*НЕ СЕ ИЗПОЛЗВА*/
+/* Стил за блока с акцент с цвят на фона лилав (purple) */
+.purple {
+	background-color: #eda3ff;  /* Лилав цвят на фона */
+	margin-left: 0;               /* Нулиране на външния отстъп от лявата страна */
+}
+
+/*НЕ СЕ ИЗПОЛЗВА*/
+/* Стил за блока с акцент с цвят на фона розов (pink) */
+.pink {
+	background-color: #fa9de6;  /* Розов цвят на фона */
+	margin-left: 0;               /* Нулиране на външния отстъп от лявата страна */
+}
+  
+/*НЕ СЕ ИЗПОЛЗВА*/
+/* Стил за блока с акцент с цвят на фона син (blue) */
+.blue {
+	background-color: #abebff;  /* Син цвят на фона */
+	margin-left: 0;               /* Нулиране на външния отстъп от лявата страна */
+}
+  
+/*НЕ СЕ ИЗПОЛЗВА*/
+/* Стилове за заглавието в блока с акцент */
+.accentBlock h3 {
+	color: #282828;             /* Цвят на заглавието */
+	font-size: 2em;               /* Размер на шрифта за заглавието */
+	font-weight: bold;            /* Удебелен текст за заглавието */
+	margin: 0 0 10px 0;           /* Отстъпи на заглавието: горе, долу, ляво, дясно */
+}
+  
+/*НЕ СЕ ИЗПОЛЗВА*/
+/* Стил за параграфите в блока с акцент */
+.accentBlock p {
+	color: #282828;             /* Цвят на текста */
+	margin: 3px 0;                /* Отстъпи на текста: горе и долу */
+	line-height: 200%;            /* Височина на реда */
+}
+  
+/*НЕ СЕ ИЗПОЛЗВА*/
+/* Стил за връзките (акценти) в блока с акцент */
+.accentBlock a {
+	color: #fff;                /* Цвят на текста на връзката */
+	background-color: #26005e;  /* Цвят на фона на връзката */
+	font-size: 1.2em;             /* Размер на шрифта за връзката */
+	font-weight: bold;            /* Удебелен текст за връзката */
+	padding: 10px 20px;           /* Вътрешен отстъп на връзката */
+	border-radius: 19px;          /* Радиус на заобляне на върха на връзката */
+	text-decoration: none;        /* Няма подчертаване на връзката */
+	text-transform: uppercase;    /* Преобразуване на текста в главни букви */
+	margin: 10px 0;               /* Външен отстъп на връзката от горната и долната части */
+	display: inline-block;        /* Показване на връзката като блок в ред */
+}
+
+/*НЕ СЕ ИЗПОЛЗВА*/
+/* Стил за блока с акцент, който е оранжев (accentBlock.orange) */
+.accentBlock.orange a {
+	color: #282828;             /* Цвят на текста на връзката в оранжев блок */
+	background-color: #ffffff;  /* Бял цвят на фона на връзката в оранжев блок */
+}
+
+.accentBlock.orange h3,
+.accentBlock.orange p {
+	color: #ffffff;             /* Бял цвят на текста в заглавието и параграфите на оранжев блок */
+}
+  
+/*НЕ СЕ ИЗПОЛЗВА*/
+/* Стил за заглавието h2 с клас "roza" */
+h2.roza {
+	color: #e22670;  /* Розов цвят на заглавието h2 с клас "roza" */
+	margin-top: 35px;  /* Външен отстъп отгоре на заглавието h2 с клас "roza" */
+}
+  
+/*НЕ СЕ ИЗПОЛЗВА*/
+/* Стил за блока с точки от страницата */
+.poiBlock h2 {
+/* Стилове могат да бъдат добавени според нуждите на проекта */
+}
+  
+/*ОТСТЪП ОТ ЕЛЕМЕНТИТЕ*/
+  /* Стил за основния контейнер на страницата */
+#page {
+	padding: 25px 0;  /* Вътрешен отстъп на страницата: горе и долу */
+}
+
+/* Клас за изчистване на флоата (Clearfix) */
+.clear {
+	clear: both;  /* Очистване на флоата за избягване на проблеми със съдържанието под флоата */
+}
+
+/* Стилове за параграфите в страницата */
+#page p {
+	margin: 3px;      /* Отстъпи на параграфа: горе и долу */
+	font-size: 1.2em; /* Размер на шрифта на параграфа */
+}
+
+/*НЕ СЕ ИЗПОЛЗВА*/
+/* Стил за подзаглавията в страницата */
+#page p.subtitle {
+	text-align: center;    /* Центриране на подзаглавията */
+	font-size: 1.3em;      /* Размер на шрифта на подзаглавията */
+	max-width: 70%;        /* Максимална ширина на подзаглавията */
+	margin: 2px auto 20px; /* Отстъпи на подзаглавията: горе, долу, ляво и дясно */
+}
+
+/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+/* Стилове за малки блокове в 4 колони на страницата */
+#page .x4cols p.miniBlock {
+	width: 233px;            /* Ширина на малкия блок в 4 колони */
+	line-height: 200%;       /* Височина на реда */
+	float: left;             /* Поставя малкия блок вляво */
+	margin: 30px 16px 0 4px; /* Отстъпи на малкия блок: горе, долу, ляво, дясно */
+}
+
+/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+#page .x4cols p.miniBlock:last-of-type {
+	margin-right: 4px;  /* Външен отстъп от дясната страна на последния малък блок в 4 колони */
+}
+
+/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+/* Стил за изображенията представляващи кръгчета в страницата */
+#page p.miniBlock:before {
+	content: "\a0";          /* Добавяне на празно пространство */
+	background-image: url('images/circle.png');  /* Снимка на кръгчето */
+	background-repeat: no-repeat;                /* Предотвратява повторението на снимката */
+	background-position: left top;               /* Позиция на снимката: ляво горе */
+	width: 36px;            /* Ширина на снимката */
+	height: 36px;           /* Височина на снимката */
+	display: block;         /* Показване на снимката като блок елемент */
+	margin-bottom: 20px;    /* Външен отстъп отдолу на снимката */
+}
+
+/* Стил за долната част на страницата (футър) */
+/*ЗА ДОЛНАТАЧАСТ НА СТРАНИЦАТА*/
+#footer {
+	padding: 30px 0 10px;  /* Вътрешен отстъп на футъра: горе, долу, ляво */
+}
+
+/* Стил за параграфите във футъра */
+#footer p {
+	font-size: .9em;   /* Размер на шрифта на параграфа във футъра */
+	text-align: center;  /* Центриране на текста на параграфа във футъра */
+	margin: 10px auto;  /* Отстъпи на параграфа във футъра: горе, долу, ляво и дясно */
+}
+
+/*ЦВЯТ НА ФОНА НА БЛОКОВЕТЕ ТЕКСТ И ПАРАМЕТРИ ЗА НАЧАЛНАТА СТРАНИЦА*/
+/* Стил за блока представляващ интересни места (poiBlock) на страницата */
+.poiBlock1 {
+	width: 60%;
+	display: inline-block;
+	background-color: rgba(236, 194, 255, 0.788);
+	margin: 0 0 20px;
+	border: #ccc solid 1px;
+	position: relative;  /* Добавете позиция relative */
+
+	/* Стил за заглавието h2 */
+	h2 {
+		font-size: 2em;              /* Размер на шрифта на заглавието h2 */
+		margin: 0 0 10px;            /* Отстъпи на заглавието: горе, долу, ляво */
+		text-align: center;          /* Центриране на заглавието */
+		line-height: 1.5em;          /* Височина на реда */
+		width: 100%;                 /* 100% ширина на заглавието */
+		background-color: rgba(173, 250, 189, 0.8);  /* Цвят на фона на заглавието с алфа канал */
+	}
+}
+
+/*ЦВЯТ НА ФОНА НА БЛОКОВЕТЕ ТЕКСТ И ПАРАМЕТРИ ЗА БЪЛГАРСКИ ЕЗИК*/
+/* Стил за блока представляващ интересни места (poiBlock) на страницата */
 .poiBlock {
 	width: 100%;
 	display: inline-block;
-	background-color: #fafaf0;
+	background-color: hsla(32, 73%, 67%, 0.788);
 	margin: 0 0 20px;
-	border: #ccc solid 1px;
+	position: relative;  /* Добавете позиция relative */
+
+	/* Стил за заглавието h2 */
+	h2 {
+		font-size: 2em;              /* Размер на шрифта на заглавието h2 */
+		margin: 0 0 10px;            /* Отстъпи на заглавието: горе, долу, ляво */
+		text-align: center;          /* Центриране на заглавието */
+		line-height: 1.5em;          /* Височина на реда */
+		width: 100%;                 /* 100% ширина на заглавието */
+		background-color: rgb(255, 212, 177);  /* Цвят на фона на заглавието с алфа канал */
+	}
 }
-.poiBlock img {
-	float: right;
-	display: block;
-}
-.poiBlock .poiText {
-	padding: 20px;
-	width: calc( 100% - 300px );
+
+.poiBlock3 {
+	width: 100%;
 	display: inline-block;
+	background-color: rgba(236, 194, 255, 0.788);;
+	margin: 0 0 20px;
+	position: relative;  /* Добавете позиция relative */
+
+	/* Стил за заглавието h2 */
+	h2 {
+		font-size: 2em;              /* Размер на шрифта на заглавието h2 */
+		margin: 0 0 10px;            /* Отстъпи на заглавието: горе, долу, ляво */
+		text-align: center;          /* Центриране на заглавието */
+		line-height: 1.5em;          /* Височина на реда */
+		width: 100%;                 /* 100% ширина на заглавието */
+		background-color: rgba(173, 250, 189, 0.8);  /* Цвят на фона на заглавието с алфа канал */
+	}
 }
+
+/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+/* Стил за снимката в блока за интересни места */
+.poiBlock img {
+	position: absolute;  /* Позициониране на снимката абсолютно в блока за интересни места */
+	top: 0;              /* Поставяне на горния край на снимката в горния край на блока за интересни места */
+	right: 0;            /* Поставяне на десния край на снимката в десния край на блока за интересни места */
+}
+
+/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+/* Стил за текста в блока за интересни места */
+.poiBlock .poiText {
+	padding: 20px;  /* Вътрешен отстъп на текста в блока за интересни места */
+	width: calc(100% - 300px);  /* Ширина на текста в блока за интересни места */
+	display: inline-block;  /* Показване на текста като inline-block елемент */
+}
+
+/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+/* Стил за параграфите в текста на блока за интересни места */
 .poiText p {
-	margin: 5px 0;
+	margin: 5px 0;  /* Отстъпи на параграфа в текста на блока за интересни места: горе и долу */
 }
+
+/* Стил за първата буква на първия параграф в текста на блока за интересни места */
 .poiText p:first-letter {
-	font-size: 1.2em;
-	color: #bf2e02;
-	font-weight: bold;
+	font-size: 1.2em;       /* Размер на първата буква */
+	font-weight: bold;      /* Удебелен текст за първата буква */
 }
+
 /*****************/
-@media screen and (max-width: 1020px){
 
-.accentBlock {
-	box-shadow: 0 0 5px #000;
-	width: 100%;
-	max-width: 520px;
-	height: auto;
-	float: none;
-	margin: 0 auto 10px;
-	padding: 15px 30px 7px;
-}
-#page .x4cols p.miniBlock {
-	width: calc( 50% - 2 * 10px );
-	margin: 30px 10px 0 10px;
-}
-#page .x4cols p.miniBlock:last-of-type {
-	margin-right: 10px;
-}
-#page .x4cols p.miniBlock:nth-of-type(odd) {
-	clear: left;
-}
-}
+/* Медия заявка за екрани с максимална ширина до 1020px */
+@media screen and (max-width: 1020px) {
+	/* Стилове за адаптивност на блокове, колони и др. */
+	/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+	/* Адаптивно оформление на блоковете с клас "accentBlock" */
+	.accentBlock {
+		box-shadow: 0 0 5px #000;  /* Прилагане на сянка на блока */
+		width: 100%;                 /* 100% ширина на блока */
+		max-width: 520px;            /* Максимална ширина на блока */
+		height: auto;                /* Автоматична височина на блока */
+		float: none;                 /* Премахване на плъзгането на блока наляво или надясно */
+		margin: 0 auto 10px;         /* Отстъпи: горе, долу, автоматично (центриране на блока) */
+		padding: 15px 30px 7px;      /* Вътрешен отстъп на блока: горе, долу, ляво, дясно */
+	}
 
-#menu-mob.open:before {
-	content: "\2613";
-}
+	/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+	/* Адаптивно оформление на малките блокове в секцията "x4cols" */
+	#page .x4cols p.miniBlock {
+		width: calc(50% - 2 * 10px);  /* 50% ширина с отстъпи от ляво и дясно */
+		margin: 30px 10px 0 10px;     /* Отстъпи на малкия блок: горе, долу, ляво, дясно */
+	}
 
-@media screen and (max-width: 678px){
+	/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+	/* Оформление на последния малък блок в реда */
+	#page .x4cols p.miniBlock:last-of-type {
+		margin-right: 10px;  /* Външен отстъп от дясната страна на последния малък блок в реда */
+	}
 
-#topTitle h1 {
-	font-size: 3.2em;
-}
-#menu {
-	display: none;
-	padding: 50px 30px 20px 70px;
-	position: absolute;
-	left: 1px;
-	top: 0;
-	background: linear-gradient(to top, rgba(243, 160, 50, .9) 0, rgba(198, 124, 26, .95) 100%);
-	border-right: 1px solid #c67c1a;
-	border-bottom: 1px solid #c67c1a;
-}
-#menu a {
-	display: block;
-	margin: 30px 0;
-}
-#menu.open {
-	display: block;
-}
-#menu-mob {
-	display: block;
-	height: 40px;
-	position: absolute;
-	top: 10px;
-	right: 0;
-	z-index:1000;
-}
-#menu-mob:before {
-	display: inline-block;
-	width:40px;
-	height: 40px;
-	content: "\2630";
-	font-size: 30px;
-	color: #fff;
-}
+	/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+	/* Оформление на нечетните малки блокове в реда */
+	#page .x4cols p.miniBlock:nth-of-type(odd) {
+		clear: left;  /* Прекъсване на плъзгането наляво за нечетните блокове в реда */
+	}
 
-.poiBlock img {
-	float: none;
-	margin: 0 auto;
+	/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+	/* Стилове за мобилното меню при отворено състояние */
+	#menu-mob.open:before {
+		content: "\2613";  /* Добавяне на символ за отворено меню */
+	}
+
+	/* Медия заявка за екрани с максимална ширина до 678px */
+	@media screen and (max-width: 678px) {
+		/* Стилове за адаптивност на блокове, меню и др. */
+		/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+		/* Установяване на размера на шрифта за заглавието "h1" в секцията "topTitle" */
+		#topTitle h1 {
+			font-size: 3.2em;  /* Нов размер на шрифта за h1 */
+		}
+		
+		/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+		/* Стилове за адаптивност на менюто в секцията "menu" */
+		#menu {
+			display: none;                 /* Скриване на менюто по подразбиране */
+			padding: 50px 30px 20px 70px;  /* Вътрешен отстъп на менюто */
+			position: absolute;            /* Абсолютна позиция на менюто */
+			left: 1px;                     /* Отстъп наляво */
+			top: 0;                        /* Отстъп отгоре */
+			background: linear-gradient(to top, rgba(243, 160, 50, .9) 0, rgba(198, 124, 26, .95) 100%);  /* Градиентен фон на менюто */
+			border-right: 1px solid #c67c1a;   /* Дясна граница на менюто */
+			border-bottom: 1px solid #c67c1a;  /* Долна граница на менюто */
+		}
+		
+		/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+		/* Стилове за адаптивност на връзките в менюто */
+		#menu a {
+			display: block;  /* Превръщане на връзките в блокове */
+			margin: 30px 0;  /* Външен отстъп на връзките */
+		}
+		
+		/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+		/* Стилове за адаптивност на мобилното меню */
+		#menu.open {
+			display: block;  /* Показване на менюто при отворено състояние */
+		}
+		
+		/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+		/* Стилове за адаптивност на икона за мобилното меню */
+		#menu-mob {
+			display: block;  /* Показване на иконата за мобилното меню */
+		    height: 40px;  /* Височина на иконата */
+		    position: absolute;  /* Абсолютна позиция на иконата */
+		    top: 10px;  /* Отстъп отгоре */
+		    right: 0;  /* Отстъп отдясно */
+		    z-index: 1000;  /* Заден план на иконата */
+		}
+	}
+	/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+	/* Стилове за визуализация на икона преди мобилното меню */
+	#menu-mob:before {
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		content: "\2630";
+		font-size: 30px;
+		color: #fff;
+	}
 	
-}
-.poiBlock .poiText {
-	width: 100%;
-}
-
-}
-
-@media screen and (max-width: 520px){
-
-#page .x4cols {
-	padding: 0 20px;
-}
-#page .x4cols p.miniBlock {
-	width: 100%;
-	float: none;
-	clear: both;
-	margin: 30px 0 0 0;
+	/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+	/* Адаптивно оформление на блоковете с клас "poiBlock" */
+	.poiBlock img {
+		float: none;  /* Премахване на изравняването на картинката от ляво */
+		margin: 0 auto;  /* Центриране на картинката в блока */
+	}
 	
+	/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+	/* Адаптивно оформление на текстовия блок в блоковете с клас "poiBlock" */
+	.poiBlock .poiText {
+		width: 100%;  /* За пълна ширина на текстовия блок */
+	}
+	
+	/* Медия заявка за екрани с максимална ширина до 520px */
+	@media screen and (max-width: 520px) {
+		/* Стилове за адаптивност на блокове и др. */
+		/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+		/* Установяване на padding за контейнера с клас "x4cols" */
+		#page .x4cols {
+			padding: 0 20px;  /* Добавяне на padding наляво и надясно */
+		}
+		
+		/*ЗА МОМЕНТА НЕ СЕ ИЗПОЛЗВА*/
+		/* Адаптивно оформление на блоковете с клас "miniBlock" в контейнера "x4cols" */
+		#page .x4cols p.miniBlock {
+			width: 100%;  /* За пълна ширина на блока */
+			float: none;  /* Премахване на изравняването наляво */
+			clear: both;  /* Изчистване на float-ове преди и след блока */
+			margin: 30px 0 0 0;  /* Външен отстъп на блока */
+		}
+	}
 }
 
+/* Стил за контейнера на колоните */
+.column-container {
+    display: flex; /* Използвайте Flexbox за флексибилно разпределение */
 }
+
+/* Стил за всяка отделна колона */
+.column {
+    flex: 1; /* Разширете колоните, за да заемат цялата ширина на контейнера */
+    margin: 10px; /* Разтояние между колоните */
+    padding: 15px; /* Вътрешен отстъп на колоните */
+    border: 1px solid #ccc; /* Граници за разграничаване на колоните */
+}
+
+/* Допълнителен стил за заглавията на колоните (не е задължително) */
+.column h2 {
+    margin-bottom: 10px; /* Разтояние под заглавията */
+}
+
+/* Стил за центриране на текста вертикално */
+.center-vertically {
+    display: flex;
+    align-items: center;
+}
+/*Този стил се използва за центриране на съдържанието вертикално в елемента. 
+*Когато се приложи към елемент, той използва Flexbox, за да насочи децата си 
+*вертикално в центъра на родителския елемент.*/
+
