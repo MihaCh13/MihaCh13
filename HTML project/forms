@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div style="margin: 5px;">
+            <label for="Elie"> Вашето име:</label>
+            <input type="text" name="Elie">
+        </div>
+        <div style="margin: 5px;">
+            <label for="Moa"> Въведете парола:</label>
+            <input type="password" name="Moa">
+        </div>
+        <div style="margin: 5px;">
+            <label for="Tilifon"> Въведете телефонния си номер:</label>
+            <input type="tel" name="Tilifon" placeholder="089578580">
+        </div>
+        <div style="margin: 5px;">
+            <label for="chavki"> Какви IT устройства използвате:</label> <br>
+            <input type="checkbox" name="chavki1" value="Тилифон">
+            <label for="chavki1"> Тилифон</label><br>
+            <input type="checkbox" name="chavki2" value="Компутър">
+            <label for="chavki2"> Компутър</label><br>
+            <input type="checkbox" name="chavki3" value="Тамблет">
+            <label for="chavki3"> Тамблет</label>
+        </div>
+        <div style="margin: 5px;">
+            <label for="stantsia"> Какво радио слушате?</label> <br>
+            <input type="radio" name="stantsia1" value="Veselina">
+            <label for="stantsia1"> Veselina</label><br>
+            <input type="radio" name="stantsia2" value="Veronika">
+            <label for="stantsia2"> Veronika</label><br>
+            <input type="radio" name="stantsia3" value="Daric">
+            <label for="stantsia3"> Daric</label><br>
+            <input type="radio" name="stantsia4" value="NRG">
+            <label for="stantsia4"> NRG</label>
+        </div>
+        <div style="margin: 5px;">
+            <label for="stantsia"> Кой е любимият ви цвят?</label> <br>
+            <select name="stantsia" id="stantsia"> 
+            <option value="Червено">Червено</option>
+             <option value="Лилаво">Лилаво</option>
+            <option value="Черно">Черно</option>
+            <option value="Оранжево">Оранжево</option>
+            <option value="Жълто">Жълто</option>
+            <option value="Зелено">Зелено</option></select>
+        </div>
+        <div style="margin: 5px;">
+            <label for="text1">Вашият коментар:</label><br>
+            <textarea name="comentar" id="text1" cols="40" rows="12">Моят коментар е:</textarea>
+        </div>
+        <div style="margin: 5px;">
+            <label for="uploudfile">Прикачете тук:</label><br>
+            <input type="file" name="uploudfile" size="25"/>
+        </div>
+        <div style="margin: 5px;">
+            <input type="submit" value="Submit" onclick="alert('Формулярът е изпратен за обработкал')"/>
+            <input type="reset" value="Reset"/>
+        </div>
+    </form>
+</body>
+</html>
