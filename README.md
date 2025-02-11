@@ -26,7 +26,7 @@
 <a href="C - programming"><img src="pics/c-logo-programming.png" alt="C-programming" width="50"></a>
 <a href="Games"><img src="pics/pngegg.png" alt="C# Logo" width="50"></a>
 <a href="Py Codes"><img src="pics/python-5-logo-png-transparent.png" alt="Python Logo" width="50"></a> 
-<img src="pics/code.png" alt="Code Logo" width="50">
+<a href="HTML project"><img src="pics/code.png" alt="Code Logo" width="50">
 <a href="Digital Art"><img src="pics/digital%20art.png" alt="Digital Art Logo" width="50"></a>
 <img src="pics/gimp.png" alt="GIMP Logo" width="50"> 
 <img src="pics/incscape.png" alt="Inkscape Logo" width="50">
