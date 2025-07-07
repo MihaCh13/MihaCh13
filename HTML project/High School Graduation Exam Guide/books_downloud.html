@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="bg" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Pomost_maturi.bg</title>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<style>
+  table {
+    border-collapse: collapse;
+    width: 60%;
+     /* Този стил определя разстоянието между клетките */
+  }
+
+  td {
+    padding: 5px; /* Този стил определя вътрешния падинг на клетките */
+    text-align: left;
+  }
+
+	body {
+		background-image: url(photots/informatica.jpg);
+	}
+
+    /* Стилове за контейнера на долните колони */
+.x4cols {
+    background-color: rgba(0, 0, 0, 0.8); /* Цвят на фона - черен с алфа канал 0.8 за прозрачност */
+    color: #ffffff; /* Цвят на текста - бял */
+    padding: 40px; /* Отстъпи на контейнера */
+}
+
+/* Стилове за колоните */
+.x4cols .column-container {
+    display: flex;
+    justify-content: space-between; /* Разпределение на колоните в краищата на контейнера */
+}
+
+.x4cols .column {
+    flex: 0 0 48%; /* Гъвкава ширина, оставяйки 2% за отстъпи */
+}
+
+/* Допълнителни стилове за текста в колоните, ако е необходимо */
+.x4cols h2, .x4cols p {
+    margin-bottom: 10px;
+}
+
+</style>
+</head>
+<body>
+<div id="menu-mob" onclick="this.classList.toggle('open'); document.getElementById('menu').classList.toggle('open')"></div>
+<div id="home" class="pageContainer">
+	<div id="headerContainer">
+		<div id="header" class="baseBlock">
+			<div class=""><a href="project.html"><img src="photots/logo.png" width="45px"></a></div>
+			<div id="menu">
+				<a href="project.html">Начало</a>
+				<a href="information.html">Информация</a>
+				<a href="Home page.html">Български език</a>
+                <a href="literatura.html">Литература</a>
+                <a href="informatsionni.html">Информационни технологии</a>
+                <a href="Informatika.html">Информатика</a>
+			</div>
+		</div>
+	</div>
+	<div id="topTitle" class="baseBlock">
+		<h1>Учебници по информационни технологии информатика</h1>
+	</div>
+	<div style="padding: 20px;">
+        <div id="accentBlock" class="baseBlockC">
+            <div class="accentBlock yellow-P">
+                <h3>Python</h3>
+                <ul>
+                    <li>Самоучител за начинаещи в програмирането с езика Python.</li>
+                    <li>Навлиза в основите на програмирането, предоставяйки последователно и структурирано ръководство.</li>
+                    <li>Обхваща прости команди, изчисления, конзолен вход и изход, работа със среда за разработка (IDE).</li>
+                    <li>Конструира по-сложна програмна логика с условни конструкции, цикли, вложени цикли.</li>
+                    <li>Декларира и извиква функции, предоставяйки примери и задачи с нарастваща сложност.</li>
+                    <li>Предоставя видеоуроци към всяка тема, много практически упражнения и безплатна система за оценяване на решенията.</li>
+                    <li>Дава базови познания по програмиране за по-нататъшно обучение като "Python developer".</li>
+                </ul>
+                <div style="text-align: right;">
+                    <a style="background-color: rgb(89, 24, 255);" href="books/Основи на програмирането с Python.pdf" class="aButton" download>Изтегли</a>
+                </div>                
+            </div>
+    
+            <div class="accentBlock red-J">
+                <h3>Java</h3>
+                <ul>
+                    <li>Видео уроци и система за автоматично оценяване на кода</li>
+                    <li>Писане на програмен код и решаване на задачи</li>
+                    <li>Синтаксис на Java, работа със среда за разработка (IDE)</li>
+                    <li>Променливи, оператори, изрази, взаимодействие с конзолата</li>
+                    <li>Условни конструкции (if-else, switch-case), цикли (for, while, do-while)</li>
+                    <li>Работа с методи - деклариране, извикване, подаване на аргументи, връщане на стойност</li>
+                </ul>
+                <div style="text-align: right;">
+                    <a style="background-color: rgb(103, 103, 103);" href="books/Основи на програмирането с Java.pdf" class="aButton" download>Изтегли</a>
+                </div>                
+            </div>
+
+            <div class="accentBlock orange-J">
+                <h3>Java Script</h3>
+                <ul>
+                    <li>За начинаещи</li>
+                    <li>Видео уроци и оценяване на код</li>
+                    <li>Синтаксис, променливи, оператори, условия и цикли</li>
+                    <li>Функции и техники за решаване на задачи</li>
+                    <li>Ръководство за напреднали</li>
+                    <li>Обхваща рекурсия, структури от данни, алгоритми</li>
+                    <li>Лекции и видеоуроци, принципи на ООП</li>
+                    <li>Съвременни технологии - lambda изрази, LINQ заявки</li>
+                </ul>
+                <div style="text-align: right;"><a style="background-color: rgb(255, 213, 0);" href="books/Основи на програмирането с JavaScript.pdf" class="aButton" download>Изтегли</a></div>
+            </div>
+    
+            <br class="clear">
+        </div>
+    </div>
+	
+    <div style="padding: 20px;">
+        <div id="accentBlocks" class="baseBlock-C" style="padding-bottom: 40px;">
+            <div class="accentBlock purple-C">
+                <h3>C#</h3>
+                <ol>
+                    <li>
+                        <strong>Основи на програмирането</strong>
+                        <ul>
+                            <li>Отлично съвременно ръководство за начинаещи в програмирането с езика C#.</li>
+                            <li>Запознава читателите с начални умения по програмиране, включително синтаксиса на C#, работа със среда за разработка и основни конструкции.</li>
+                            <li>Официален учебник за курса "Programming Basics with C#" в Софтуерния университет (СофтУни).</li>
+                            <li>Подготвя читателите за приемния изпит в СофтУни, където програмирането се изучава задълбочено.</li>
+                        </ul>
+                    </li>
+                    <div style="text-align: right;"><a style="background-color: rgb(174, 0, 113);" href="books/Основи на програмирането със C-sharp.pdf" class="aButton" download>Изтегли</a></div>
+                    <li>
+                        <strong>Принципи на програмирането</strong>
+                        <ul>
+                            <li>Съвременно ръководство, фокусирано върху програмирането и алгоритмите с платформата .NET и C#.</li>
+                            <li>Включва уроци по основите на програмирането, структури от данни, алгоритми, ООП принципи, LINQ заявки и други.</li>
+                            <li>Авторите провеждат безплатни курсове по програмиране на C# за начинаещи в Софтуерния университет.</li>
+                            <li>Предоставя стабилна основа за усвояване на професията C# / .NET софтуерен инженер.</li>
+                        </ul>
+                    </li>
+                    <div style="text-align: right;"><a style="background-color: rgb(174, 0, 113);" href="books/Принципи на програмирането със C-sharp.pdf" class="aButton" download>Изтегли</a></div>
+                </ol>
+            </div>
+
+            <div class="accentBlock blueS">
+                <h3>HTML и CSS</h3>
+                <ul>
+                    <li>
+                        <h2>HTML</h2>
+                        <p>
+                            Разглеждани са основите на уеб програмирането, като представени са най-често използваните езици за програмиране в средата на Интернет.
+                            <br>
+                            - Представени са таговете и атрибутите на HTML.
+                            <br>
+                            - Съпоставяне между актуалната версия на езика HTML 4.01 и предстоящата версия HTML 5.
+                        </p>
+                    </li>
+                    <li>
+                        <h2>CSS</h2>
+                        <p>
+                            Основната част разглежда езика HTML, таговете и атрибутите му.
+                            <br>
+                            - Показва стилизиращите възможности на CSS версии 1, 2 и 3.
+                            <br>
+                            - Фокусира се върху форматирането на текстове, списъци, таблици, цветове, фон и възможности за форматиране в колони.
+                        </p>
+                    </li>
+                </ul>
+                <div style="text-align: right;"><a href="books/Основи на уебпрограмирането (HTML CSS).pdf" class="aButton" download>Изтегли</a></div>
+            </div>
+    
+            <div class="accentBlock purpleS">
+                <h3 style="color: white;">Софтуерен университет</h3>
+                <p style="color: white;">Запознай се с редица курсове в сферата на програмирането, които могат да ти бъдат от полза не само за матурата, а и за вбъдеще.</p>
+                <div style="text-align: right;"><a style="background-color: rgb(255, 255, 255); color: black;" href="https://softuni.bg/" class="aButton">Посети</a></div>
+            </div>
+            <div style="margin-top: 40px;" class="accentBlock greenS">
+                <h3 style="color: rgb(0, 0, 0);">Самоучител</h3>
+                <a style="background-color: rgb(240, 141, 255); color: black;" href="https://www.w3schools.com/cs/index.php" class="aButton">C#</a>
+                <a style="background-color: rgb(160, 198, 255); color: black;" href="https://www.w3schools.com/python/default.asp" class="aButton">Python</a>
+                <a style="background-color: rgb(238, 255, 155); color: black;" href="https://www.w3schools.com/html/default.asp" class="aButton">HTML</a>
+                <a style="background-color: rgb(255, 164, 214); color: black;" href="https://www.w3schools.com/css/default.asp" class="aButton">CSS</a>
+                <a style="background-color: rgb(255, 141, 141); color: black;" href="https://www.w3schools.com/java/default.asp" class="aButton">Java</a>
+                <a style="background-color: rgb(255, 196, 148); color: black;" href="https://www.w3schools.com/js/default.asp" class="aButton">Java Script</a>
+                <a style="background-color: rgb(169, 175, 255); color: black;" href="https://www.w3schools.com/php/default.asp" class="aButton">PHP</a>
+                <a style="background-color: rgb(167, 255, 248); color: black;" href="https://www.w3schools.com/sql/default.asp" class="aButton">SQL</a>
+            </div>
+            <br class="clear">
+        </div>
+    </div>
+	
+	</div>
+	<!-- Допълнителен блок със стилове за фона и текста -->
+	<div style="padding-left: 32px ; padding-right: 32px;">
+        <div style="background-color: black; color: #ffffff;">
+            <!-- Контейнер с 2 колони -->
+            <div class="x4cols">
+                <div>
+                    <!-- Първа колона с контактна информация -->
+                    <h2 >Форми за контакт:</h2>
+                    <!-- Контейнер с две колони -->
+                    <div class="column-container">
+                        <!-- Първа колона с информация -->
+                        <div class="column">
+                            <h2 style="background-color: rgba(173, 250, 189, 0.8); text-align: center;">Нашите координати</h2>
+                            <p>Можете да се свържете с нас по един от следните посочени начина:</p>
+                            <p>Тел: 070018908 / +359875326160</p>
+                            <p class="center-vertically">
+                                <!-- Снимка с ширина 20 пиксела -->
+                                <img src="photots/gmail.png" width="20px" style="margin-right: 10px;">
+                                <!-- Връзка със стил за цвят на текста -->
+                                <a style="color: rgb(175, 91, 254);" href="mailto:pomosht_za_maturite@abv.bg">pomosht_za_maturite@abv.bg</a>
+                            </p>
+                            <p>Адрес:
+                                <br>Kabinata.com
+                                <br>кв. Лозенец,
+                                <br>ул. „Минзухар“ 14
+                                <br>София, 1164
+                                <br>България</p>
+                                
+                                <p>Работно време офис:
+                                    <br>Всеки ден от понеделник до петък
+                                    <br>от 9:00ч. – 17:30ч.
+                                </p>
+    
+                            <a href="https://www.instagram.com/effectschool_bg/">
+                                <img src="photots/instagram.png" alt="Instagram" width="30px">
+                            </a>
+                        
+                            <a href="https://www.facebook.com/groups/maturitebg/?locale=bg_BG">
+                                <img src="photots/facebook.png" alt="Facebook" width="30px">
+                            </a>
+                        
+                            <a href="https://www.youtube.com/playlist?list=PLW2cbfpsovE9u_dSdcpaQtgfdlpXhbYuX">
+                                <img src="photots/youtube.png" alt="YouTube" width="30px">
+                            </a>
+                        </div>
+                        <!-- Втора колона с информация за МОН -->
+                        <div class="column">
+                            <h2 style="background-color: rgba(173, 250, 189, 0.8); text-align: center;">Препратки към МОН</h2>
+                            <p>Изпитни материали за ДЗИ по години: <a style="color: rgb(175, 91, 254);" href="https://web.mon.bg/bg/100158"></a></p>
+                            <p> Достъп с удобен обществен транспорт:
+                                <ul>
+                                    <li>спирка „Сердика“ на метро линии № 1 и 2</li>
+                                    <li>спирка пл. „Света Неделя“ на трамвайни линии № 4, 12 и 18</li>
+                                    <li>спирка „Съдебна палата“ на трамвайни линии № 5 и 8</li>
+                                    <li>спирка „Пл. Джузепе Гарибалди“ на трамвайна линия № 10</li>
+                                    <li>спирка на бул. „Княз Александър Дондуков“ на трамвайни линии № 20 и 22</li>
+                                    <li>платени паркинги в близост до Центъра за административно обслужване и места с режим „синя зона“</li>
+                                    <li>безплатен паркинг за велосипеди пред входа на Центъра за административно обслужване</li>
+                                </ul>
+                            </p>
+                            <p>Телефон за граждани: 0 800 10 112</p>
+                            <p>Централа на МОН:
+                                <ul>
+                                    <li>тел.: 02 9217 799</li>
+                                    <li>София 1000
+                                        бул. "Княз Дондуков" 2A</li>
+                                </ul>
+                            </p>
+                            <p>Приемна:
+                                <ul>
+                                    <li>тел.: 02 9217 760</li>
+                                    <li class="center-vertically">
+                                        <img src="photots/gmail.png" width="20px" style="margin-right: 10px;">
+                                        e-mail:    
+                                        <a style="color: rgb(175, 91, 254);" href="mailto:priemna@mon.bg"> priemna@mon.bg</a>
+                                    </li>
+                                    <p>Работно време: 9:00 ч. - 17:30 ч.</p>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="baseBlock">
+            
+                    <p><a style="color: white;" href="Iztochnitsi.html">Източници</a></p>
+                    <p >Copyright © 2021 Domino EOOD. All Rights Reserved.</a></p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
