@@ -1,6 +1,6 @@
-
-
-![Matrix Animation](./Matrix/matrix.gif)
+<p align="center">
+  <img src="Matrix/matrix.gif" alt="Matrix Animation" />
+</p>
 
 
 (っ◔◡◔)っ ♥
