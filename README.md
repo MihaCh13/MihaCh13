@@ -25,7 +25,9 @@
 <!-- Вграждане на HTML код в README.md -->
 <a href="https://github.com/MihaCh13/TU-Sofia/tree/main/C-codes"><img src="pics/c-logo-programming.png" alt="C-programming" width="50"></a>
 <a href="https://github.com/MihaCh13/C--Fundamentals"><img src="pics/C_Sharp-logo.png" alt="C#-programming" width="50"></a>
-<a href="Games"><img src="pics/pngegg.png" alt="C# Game Logo" width="50"></a>
+<a href="Games"><img src="pics/C_Sharp_games.png" alt="C# Game Logo" width="50"></a>
+<a href="https://github.com/MihaCh13/Java__for__QA"><img src="pics/Java_logo.png" alt="Java - logo" width="50"></a>
+<a href="https://github.com/MihaCh13/Java__for__QA"><img src="pics/Java-logo.png" alt="Java - logo" width="50"></a>
 <a href="Py Codes"><img src="pics/python-5-logo-png-transparent.png" alt="Python Logo" width="50"></a> 
 <a href="HTML project"><img src="pics/code.png" alt="Code Logo" width="50">
 <a href="Digital Art"><img src="pics/digital%20art.png" alt="Digital Art Logo" width="50"></a>
