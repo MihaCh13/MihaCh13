@@ -23,7 +23,7 @@
 </p>
 
 <!-- Вграждане на HTML код в README.md -->
-<a href="C - programming"><img src="pics/c-logo-programming.png" alt="C-programming" width="50"></a>
+<a href="C-programming"><img src="pics/c-logo-programming.png" alt="C-programming" width="50"></a>
 <a href="Games"><img src="pics/pngegg.png" alt="C# Logo" width="50"></a>
 <a href="Py Codes"><img src="pics/python-5-logo-png-transparent.png" alt="Python Logo" width="50"></a> 
 <a href="HTML project"><img src="pics/code.png" alt="Code Logo" width="50">
